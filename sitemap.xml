@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://earl9.github.io/link/index.html</loc>
+    
+    <lastmod>2020-07-08T09:34:43.600Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://earl9.github.io/categories/index.html</loc>
     
     <lastmod>2020-07-08T09:27:57.392Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://earl9.github.io/tags/index.html</loc>
     
     <lastmod>2020-07-08T09:22:03.059Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://earl9.github.io/link/index.html</loc>
-    
-    <lastmod>2020-07-08T05:06:31.774Z</lastmod>
     
   </url>
   
