@@ -168,3 +168,8 @@ for (var i = 0; i < menus_item_child.length; i++) {
     rgba(109, 186, 130, 0.1) 100%
   );
 }
+
+var full_page = document.getElementsByClassName("full_page");
+if (full_page.length != 0) {
+  full_page[0].style.background = "transparent";
+}
