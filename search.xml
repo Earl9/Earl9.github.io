@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo+Github 搭建博客笔记</title>
+    <url>/a23f57cc.html</url>
+    <content><![CDATA[<h1 id="Hexo-Github-搭建博客教程"><a href="#Hexo-Github-搭建博客教程" class="headerlink" title="Hexo+Github 搭建博客教程"></a>Hexo+Github 搭建博客教程</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用github pages服务搭建博客的好处：</p>
+<ol>
+<li>全是静态文件，访问速度快了；</li>
+<li>免费，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器；</li>
+<li>数据绝对安全，基于github的版本管理；</li>
+<li>博客内容可以轻松打包、转移、发布到其它平台；</li>
+</ol>
+<h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><p>首先安装</p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/imgSnipaste_2020-07-16_16-24-19.png" alt=""></p>
+<p>安装过程直接点next就行，有需要的可以改一下安装位置。</p>
+<p>安装git</p>
+<p>[]: <a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/imgSnipaste_2020-07-16_16-23-54.png" alt=""></p>
+<p>安装过程同上。</p>
+<p>在安装完 Git 和 Node.js 后在任意文件夹右键打开 Git bash here 即可打开 Git 的 Bash 终端</p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/imgSnipaste_2020-07-16_16-33-07.png" alt=""></p>
+<p>然后在git终端输入以下命令，查看查看 git 和 npm 版本号：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br><span class="line">$ NPM -v</span><br></pre></td></tr></table></figure>
+
+<p>如果你的配置没问题，就会得到如下运行结果：<img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/imgSnipaste_2020-07-16_16-42-04.png" alt=""></p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>完成上面操作后，就可以安装hexo了，也可查看hexo</p>
+<p>[]: </p>
+<p>官方文档</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Test</title>
+    <url>/784dd132.html</url>
+    <content><![CDATA[<p>test</p>
+]]></content>
+      <categories>
+        <category>Hello World</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/4a17b156.html</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -22,18 +62,6 @@
       </categories>
       <tags>
         <tag>Hello World</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Test</title>
-    <url>/784dd132.html</url>
-    <content><![CDATA[<p>test</p>
-]]></content>
-      <categories>
-        <category>Hello World</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
       </tags>
   </entry>
 </search>
