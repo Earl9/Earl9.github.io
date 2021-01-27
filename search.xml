@@ -1,6 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Windows 10自用应用集合</title>
+    <url>/2adeb7d8.html</url>
+    <content><![CDATA[<h1 id="Windows-10自用应用集合"><a href="#Windows-10自用应用集合" class="headerlink" title="Windows 10自用应用集合"></a>Windows 10自用应用集合</h1><h2 id="一，桌面软件"><a href="#一，桌面软件" class="headerlink" title="一，桌面软件"></a>一，桌面软件</h2><ol start="2">
+<li><p>镜像刻录 <a href="https://www.balena.io/etcher/" target="_blank" rel="noopener">BalenaEtcher</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271249.png" alt=""></p>
+</li>
+<li><p>浏览器</p>
+<ul>
+<li><p><a href="https://www.google.cn/chrome/" target="_blank" rel="noopener">Google chrome</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271251.png" alt=""></p>
+</li>
+<li><p><a href="https://www.microsoft.com/zh-cn/edge" target="_blank" rel="noopener">Microsoft Edge</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271253.png" alt=""></p>
+</li>
+<li><p><a href="https://tools.shuax.com/edge/" target="_blank" rel="noopener">Edge离线包</a></p>
+</li>
+</ul>
+</li>
+<li><p>输入法 <a href="https://shurufa.baidu.com/" target="_blank" rel="noopener">百度输入法</a></p>
+</li>
+<li><p>安全 <a href="https://www.huorong.cn/" target="_blank" rel="noopener">火绒</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271257.png" alt=""></p>
+</li>
+<li><p>通讯</p>
+<ul>
+<li><p><a href="https://im.qq.com/download/" target="_blank" rel="noopener">QQ</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271258.png" alt=""></p>
+</li>
+<li><p><a href="https://weixin.qq.com/" target="_blank" rel="noopener">WeChat</a></p>
+</li>
+</ul>
+</li>
+<li><p>科学上网 <a href="https://github.com/yichengchen/clashX/releases" target="_blank" rel="noopener">Clash</a>,说明文档 <a href="https://docs.cfw.lbyczf.com/" target="_blank" rel="noopener">介绍</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271300.png" alt=""></p>
+</li>
+<li><p>音乐</p>
+<ul>
+<li><a href="https://y.qq.com/download/download.html" target="_blank" rel="noopener">QQ音乐</a></li>
+<li><a href="https://music.163.com/" target="_blank" rel="noopener">网易云音乐</a></li>
+</ul>
+</li>
+<li><p>写作 <a href="https://www.typora.io/" target="_blank" rel="noopener">typroa</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271302.png" alt=""></p>
+</li>
+<li><p>压缩 <a href="http://www.bandisoft.com/bandizip/old/6/" target="_blank" rel="noopener">bindzip</a>(6.x免费版本)</p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271304.png" alt=""></p>
+</li>
+<li><p>字体渲染 <a href="https://www.mactype.net/" target="_blank" rel="noopener">MacType</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271305.png" alt=""></p>
+</li>
+<li><p>字体更换 <a href="https://github.com/Tatsu-syo/noMeiryoUI/releases" target="_blank" rel="noopener">noMeiryoUI</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271417.png" alt=""></p>
+</li>
+<li><p>下载</p>
+<ul>
+<li><a href="http://www.internetdownloadmanager.com/" target="_blank" rel="noopener">Internet Download Manager</a>(付费软件)</li>
+</ul>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271306.png" alt=""></p>
+<ul>
+<li><a href="https://www.xunlei.com/" target="_blank" rel="noopener">迅雷</a></li>
+</ul>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271401.png" alt=""></p>
+</li>
+<li><p>时钟屏保 <a href="https://fliqlo.com/" target="_blank" rel="noopener">fliqlo</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271307.png" alt=""></p>
+</li>
+<li><p>图片查看 <a href="https://imageglass.org/" target="_blank" rel="noopener">ImageGlass</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271309.png" alt=""></p>
+</li>
+<li><p>Microsoft office部署 <a href="https://otp.landian.vip/zh-cn/" target="_blank" rel="noopener">Office Tool Plus</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271311.png" alt=""></p>
+</li>
+<li><p>虚拟机 <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html" target="_blank" rel="noopener">VMware Workstation</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271313.png" alt=""></p>
+</li>
+<li><p>远程控制 <a href="https://www.todesk.com/" target="_blank" rel="noopener">ToDesk</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271314.png" alt=""></p>
+</li>
+<li><p>图床 <a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">PicGo</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271315.png" alt=""></p>
+</li>
+<li><p>桌面小工具 <a href="https://u.tools/" target="_blank" rel="noopener">uTools</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271316.png" alt=""></p>
+</li>
+<li><p>游戏</p>
+<ul>
+<li><a href="https://www.wegame.com.cn/" target="_blank" rel="noopener">WeGame</a></li>
+<li><a href="https://www.blizzardgames.cn/zh/" target="_blank" rel="noopener">暴雪战网</a></li>
+<li><a href="https://store.steampowered.com/" target="_blank" rel="noopener">Steam</a></li>
+</ul>
+</li>
+<li><p>windows 10美化</p>
+<ul>
+<li><p><a href="https://www.rainmeter.net/" target="_blank" rel="noopener">Rainmeter</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271319.png" alt=""></p>
+</li>
+<li><p><a href="https://www.mydockfinder.com/" target="_blank" rel="noopener">MyDockFinder</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271320.png" alt=""></p>
+</li>
+<li><p><a href="https://store.steampowered.com/app/431960/Wallpaper_Engine/" target="_blank" rel="noopener">wallpaper Engine</a>(付费壁纸软件)</p>
+</li>
+</ul>
+</li>
+<li><p>Windows 实用工具 <a href="http://www.chuyu.me/zh-Hans/" target="_blank" rel="noopener">Dism++</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271322.png" alt=""></p>
+</li>
+<li><p>视频播放 <a href="https://potplayer.org/" target="_blank" rel="noopener">Potplayer</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271412.png" alt=""></p>
+</li>
+<li><p>卸载软件 <a href="https://geekuninstaller.com/" target="_blank" rel="noopener">Geek Uninstaller</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271323.png" alt=""></p>
+</li>
+<li><p>状态栏透明 <a href="https://github.com/Elestriel/TaskbarTools/releases" target="_blank" rel="noopener">TaskbarTools</a></p>
+</li>
+<li><p>罗技鼠标驱动</p>
+<ul>
+<li><a href="https://support.logi.com/hc/zh-cn/articles/360025298053" target="_blank" rel="noopener">Logitech游戏软件</a>(旧版)</li>
+<li><a href="https://support.logi.com/hc/zh-cn/articles/360025298133" target="_blank" rel="noopener">Logitech G HUB</a>(新版)</li>
+</ul>
+</li>
+<li><p>全局搜索<a href="https://www.voidtools.com/zh-cn/" target="_blank" rel="noopener">Everything</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271324.png" alt=""></p>
+</li>
+</ol>
+<h2 id="二，UWP软件"><a href="#二，UWP软件" class="headerlink" title="二，UWP软件"></a>二，UWP软件</h2><ol>
+<li><p>截图 <a href="https://zh.snipaste.com/" target="_blank" rel="noopener">Snipaste</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271326.png" alt=""></p>
+</li>
+<li><p>视频 Netfix</p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271339.png" alt=""></p>
+</li>
+<li><p>状态栏透明 <a href="https://github.com/TranslucentTB/TranslucentTB" target="_blank" rel="noopener">TranslucentTB</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271328.png" alt=""></p>
+</li>
+<li><p>磁盘测速 <a href="http://crystalmark.info/en/software/crystaldiskmark/" target="_blank" rel="noopener">CrystalDiskMark</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271332.png" alt=""></p>
+</li>
+<li><p>音效 Dolby Access</p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271338.png" alt=""></p>
+</li>
+</ol>
+<h2 id="实用网站"><a href="#实用网站" class="headerlink" title="实用网站"></a>实用网站</h2><ol>
+<li><p>系统镜像下载</p>
+<ul>
+<li><p><a href="https://www.microsoft.com/zh-cn/software-download/windows10/" target="_blank" rel="noopener">下载 Windows 10</a>(官方)</p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271921.png" alt=""></p>
+</li>
+<li><p><a href="https://next.itellyou.cn/" target="_blank" rel="noopener">MSDN</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271922.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>开发者社区<a href="https://www.csdn.net/" target="_blank" rel="noopener">CSDN</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271926.png" alt=""></p>
+</li>
+<li><p>编程技术教程<a href="https://www.runoob.com/" target="_blank" rel="noopener">菜鸟教程</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271928.png" alt=""></p>
+</li>
+<li><p>Web教程<a href="https://developer.mozilla.org/zh-CN/docs/Learn" target="_blank" rel="noopener">MDN</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01272000.png" alt=""></p>
+</li>
+<li><p>黑苹果社区<a href="http://www.pcbeta.com/" target="_blank" rel="noopener">远景论坛</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271933.png" alt=""></p>
+</li>
+<li><p>矢量图标库<a href="https://www.iconfont.cn/" target="_blank" rel="noopener">阿里巴巴矢量图标库</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271940.png" alt=""></p>
+</li>
+<li><p>Tampermonkey脚本库<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271942.png" alt=""></p>
+</li>
+<li><p>win10美化<a href="https://zhutix.com/pc/" target="_blank" rel="noopener">漫锋网</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271945.png" alt=""></p>
+</li>
+<li><p>云短信<a href="https://www.materialtools.com/?page=1" target="_blank" rel="noopener">云短信</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271949.png" alt=""></p>
+</li>
+<li><p>影片下载</p>
+<ul>
+<li><p><a href="http://www.yinfans.me/topic/4k" target="_blank" rel="noopener">音范丝</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271956.png" alt=""></p>
+</li>
+<li><p><a href="https://www.bugutv.cn/" target="_blank" rel="noopener">布谷TV</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01272008.png" alt=""></p>
+</li>
+<li><p><a href="http://www.pianyuan.tv/" target="_blank" rel="noopener">片源网</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271954.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>在线画图<a href="https://www.processon.com/;jsessionid=DBEAF5CE291AACD210B5A35AC373B606.jvm1" target="_blank" rel="noopener">ProcessOn</a></p>
+<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01272006.png" alt=""></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>software</category>
+      </categories>
+      <tags>
+        <tag>资源分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo+Github 搭建博客</title>
     <url>/1797fdb5.html</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用github pages服务搭建博客的好处：</p>
@@ -114,151 +316,6 @@
       </categories>
       <tags>
         <tag>Hello World</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 10自用应用集合</title>
-    <url>/2adeb7d8.html</url>
-    <content><![CDATA[<h1 id="Windows-10自用应用集合"><a href="#Windows-10自用应用集合" class="headerlink" title="Windows 10自用应用集合"></a>Windows 10自用应用集合</h1><h2 id="一，桌面软件"><a href="#一，桌面软件" class="headerlink" title="一，桌面软件"></a>一，桌面软件</h2><ol start="2">
-<li><p>镜像刻录 <a href="https://www.balena.io/etcher/" target="_blank" rel="noopener">BalenaEtcher</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271249.png" alt=""></p>
-</li>
-<li><p>浏览器</p>
-<ul>
-<li><p><a href="https://www.google.cn/chrome/" target="_blank" rel="noopener">Google chrome</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271251.png" alt=""></p>
-</li>
-<li><p><a href="https://www.microsoft.com/zh-cn/edge" target="_blank" rel="noopener">Microsoft Edge</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271253.png" alt=""></p>
-</li>
-<li><p><a href="https://tools.shuax.com/edge/" target="_blank" rel="noopener">Edge离线包</a></p>
-</li>
-</ul>
-</li>
-<li><p>输入法 <a href="https://shurufa.baidu.com/" target="_blank" rel="noopener">百度输入法</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271254.png" alt=""></p>
-</li>
-<li><p>安全 <a href="https://www.huorong.cn/" target="_blank" rel="noopener">火绒</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271257.png" alt=""></p>
-</li>
-<li><p>通讯</p>
-<ul>
-<li><p><a href="https://im.qq.com/download/" target="_blank" rel="noopener">QQ</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271258.png" alt=""></p>
-</li>
-<li><p><a href="https://weixin.qq.com/" target="_blank" rel="noopener">WeChat</a></p>
-</li>
-</ul>
-</li>
-<li><p>科学上网 <a href="https://github.com/yichengchen/clashX/releases" target="_blank" rel="noopener">Clash</a>,说明文档 <a href="https://docs.cfw.lbyczf.com/" target="_blank" rel="noopener">介绍</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271300.png" alt=""></p>
-</li>
-<li><p>音乐</p>
-<ul>
-<li><a href="https://y.qq.com/download/download.html" target="_blank" rel="noopener">QQ音乐</a></li>
-<li><a href="https://music.163.com/" target="_blank" rel="noopener">网易云音乐</a></li>
-</ul>
-</li>
-<li><p>写作 <a href="https://www.typora.io/" target="_blank" rel="noopener">typroa</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271302.png" alt=""></p>
-</li>
-<li><p>压缩 <a href="http://www.bandisoft.com/bandizip/old/6/" target="_blank" rel="noopener">bindzip</a>(6.x免费版本)</p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271304.png" alt=""></p>
-</li>
-<li><p>字体渲染 <a href="https://www.mactype.net/" target="_blank" rel="noopener">MacType</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271305.png" alt=""></p>
-</li>
-<li><p>字体更换 <a href="https://github.com/Tatsu-syo/noMeiryoUI/releases" target="_blank" rel="noopener">noMeiryoUI</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271417.png" alt=""></p>
-</li>
-<li><p>下载</p>
-<ul>
-<li><a href="http://www.internetdownloadmanager.com/" target="_blank" rel="noopener">Internet Download Manager</a>(付费软件)</li>
-</ul>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271306.png" alt=""></p>
-<ul>
-<li><a href="https://www.xunlei.com/" target="_blank" rel="noopener">迅雷</a></li>
-</ul>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271401.png" alt=""></p>
-</li>
-<li><p>时钟屏保 <a href="https://fliqlo.com/" target="_blank" rel="noopener">fliqlo</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271307.png" alt=""></p>
-</li>
-<li><p>图片查看 <a href="https://imageglass.org/" target="_blank" rel="noopener">ImageGlass</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271309.png" alt=""></p>
-</li>
-<li><p>Microsoft office部署 <a href="https://otp.landian.vip/zh-cn/" target="_blank" rel="noopener">Office Tool Plus</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271311.png" alt=""></p>
-</li>
-<li><p>虚拟机 <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html" target="_blank" rel="noopener">VMware Workstation</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271313.png" alt=""></p>
-</li>
-<li><p>远程控制 <a href="https://www.todesk.com/" target="_blank" rel="noopener">ToDesk</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271314.png" alt=""></p>
-</li>
-<li><p>图床 <a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">PicGo</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271315.png" alt=""></p>
-</li>
-<li><p>桌面小工具 <a href="https://u.tools/" target="_blank" rel="noopener">uTools</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271316.png" alt=""></p>
-</li>
-<li><p>游戏</p>
-<ul>
-<li><a href="https://www.wegame.com.cn/" target="_blank" rel="noopener">WeGame</a></li>
-<li><a href="https://www.blizzardgames.cn/zh/" target="_blank" rel="noopener">暴雪战网</a></li>
-<li><a href="https://store.steampowered.com/" target="_blank" rel="noopener">Steam</a></li>
-</ul>
-</li>
-<li><p>windows 10美化</p>
-<ul>
-<li><p><a href="https://www.rainmeter.net/" target="_blank" rel="noopener">Rainmeter</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271319.png" alt=""></p>
-</li>
-<li><p><a href="https://www.mydockfinder.com/" target="_blank" rel="noopener">MyDockFinder</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271320.png" alt=""></p>
-</li>
-<li><p><a href="https://store.steampowered.com/app/431960/Wallpaper_Engine/" target="_blank" rel="noopener">wallpaper Engine</a>(付费壁纸软件)</p>
-</li>
-</ul>
-</li>
-<li><p>Windows 实用工具 <a href="http://www.chuyu.me/zh-Hans/" target="_blank" rel="noopener">Dism++</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271322.png" alt=""></p>
-</li>
-<li><p>视频播放 <a href="https://potplayer.org/" target="_blank" rel="noopener">Potplayer</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271412.png" alt=""></p>
-</li>
-<li><p>卸载软件 <a href="https://geekuninstaller.com/" target="_blank" rel="noopener">Geek Uninstaller</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271323.png" alt=""></p>
-</li>
-<li><p>状态栏透明 <a href="https://github.com/Elestriel/TaskbarTools/releases" target="_blank" rel="noopener">TaskbarTools</a></p>
-</li>
-<li><p>全局搜索<a href="https://www.voidtools.com/zh-cn/" target="_blank" rel="noopener">Everything</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271324.png" alt=""></p>
-</li>
-</ol>
-<h2 id="二，UWP软件"><a href="#二，UWP软件" class="headerlink" title="二，UWP软件"></a>二，UWP软件</h2><ol>
-<li><p>截图 <a href="https://zh.snipaste.com/" target="_blank" rel="noopener">Snipaste</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271326.png" alt=""></p>
-</li>
-<li><p>视频 Netfix</p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271339.png" alt=""></p>
-</li>
-<li><p>状态栏透明 <a href="https://github.com/TranslucentTB/TranslucentTB" target="_blank" rel="noopener">TranslucentTB</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271328.png" alt=""></p>
-</li>
-<li><p>磁盘测速 <a href="http://crystalmark.info/en/software/crystaldiskmark/" target="_blank" rel="noopener">CrystalDiskMark</a></p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271332.png" alt=""></p>
-</li>
-<li><p>音效 Dolby Access</p>
-<p><img src= "/img/loading.gif" data-src="https://cdn.jsdelivr.net/gh/Earl9/picture/2021/01/27/01271338.png" alt=""></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>software</category>
-      </categories>
-      <tags>
-        <tag>资源分享</tag>
       </tags>
   </entry>
 </search>
