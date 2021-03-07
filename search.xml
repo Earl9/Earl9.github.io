@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Test</title>
-    <url>/784dd132.html</url>
-    <content><![CDATA[<h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1>]]></content>
-  </entry>
-  <entry>
     <title>ArchLinux+Windows10双系统安装笔记</title>
     <url>/307d4fd8.html</url>
     <content><![CDATA[<h1 id="ArchLinux-Windows10双系统安装笔记"><a href="#ArchLinux-Windows10双系统安装笔记" class="headerlink" title="ArchLinux+Windows10双系统安装笔记"></a>ArchLinux+Windows10双系统安装笔记</h1><ol>
@@ -146,6 +141,14 @@
       <tags>
         <tag>教程</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Test</title>
+    <url>/784dd132.html</url>
+    <content><![CDATA[<h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1>]]></content>
+      <categories>
+        <category>Hello World</category>
+      </categories>
   </entry>
   <entry>
     <title>Windows 10自用应用集合</title>
