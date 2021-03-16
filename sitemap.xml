@@ -74,14 +74,14 @@
   </url>
   
   <url>
-    <loc>http://earl9.tk/tags/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/</loc>
+    <loc>http://earl9.tk/tags/Hello-World/</loc>
     <lastmod>2021-03-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://earl9.tk/tags/Hello-World/</loc>
+    <loc>http://earl9.tk/tags/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2021-03-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -97,7 +97,7 @@
   </url>
   
   <url>
-    <loc>http://earl9.tk/categories/Hexo-Git-NPM/</loc>
+    <loc>http://earl9.tk/categories/Hello-World/</loc>
     <lastmod>2021-03-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -111,7 +111,7 @@
   </url>
   
   <url>
-    <loc>http://earl9.tk/categories/Hello-World/</loc>
+    <loc>http://earl9.tk/categories/Hexo-Git-NPM/</loc>
     <lastmod>2021-03-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
