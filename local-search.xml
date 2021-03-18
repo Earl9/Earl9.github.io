@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>picgo+github搭建图床</title>
+    <link href="/0.html"/>
+    <url>/0.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="picgo-github搭建图床"><a href="#picgo-github搭建图床" class="headerlink" title="picgo+github搭建图床"></a>picgo+github搭建图床</h1><ol><li><p>登录github账号，新建一个放图片的仓库</p><p><img src="https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803181819.png"></p></li><li><p>一般创建成功之后，会出现如下界面</p><p><img src="https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803181820.png"></p></li><li><p>下载并安装<a href="https://molunerfinn.com/PicGo/">PicGo</a></p><p><img src="https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803181821.png"></p></li><li><p>去github获取token</p><p>打开 <code>Settings -&gt; Developer settings -&gt; Personal access tokens</code>，最后点击 <code>generate new token</code></p><p><img src="https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803181825.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803181827.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803181828.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803181830.png"></p><p><code>token</code> 生成，注意它只会显示一次，所以你最好把它复制下来到你的备忘录存好，方便下次使用，否则下次有需要重新新建；</p></li><li><p>配置PicGo</p><p><img src="https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803181831.png"></p><p><img src="https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803181832.png"></p></li><li><p>加速访问</p><p>直接访问github仓库的图片太慢了，所以我们用<a href="https://links.jianshu.com/go?to=https://www.jsdelivr.com/">jsDelivr</a>进行加速访问，直接在PicGo设置的自定义域名中设置</p><p><code><a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D">https://cdn.jsdelivr.net/gh/用户名/仓库名</a></code></p><p>上传之前最好对图片进行压缩，个人推荐<a href="https://tinyjpg.com/">TinyPNG</a>。</p></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>教程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ArchLinux+Windows10双系统安装笔记</title>
     <link href="/307d4fd8.html"/>
     <url>/307d4fd8.html</url>
