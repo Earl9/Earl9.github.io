@@ -1,47 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>ArchLinux+Windows10双系统安装笔记</title>
-    <url>/307d4fd8.html</url>
-    <content><![CDATA[<h1 id="ArchLinux-Windows10双系统安装笔记"><a href="#ArchLinux-Windows10双系统安装笔记" class="headerlink" title="ArchLinux+Windows10双系统安装笔记"></a>ArchLinux+Windows10双系统安装笔记</h1><ol>
-<li>在磁盘管理分区，大小100G(随意大小)左右</li>
-<li>去<a href="https://archlinux.org/">官网</a>下载镜像，使用balenaEtcher将镜像写入U盘</li>
-<li>调整win10的EFI分区大小为500MB（谨慎操作，建议删除分区后重建，然后用dism++恢复引导）</li>
-<li>bios进行相关设置，开机选择从U盘启动</li>
-<li>进入安装页面，开始输入命令安装</li>
-</ol>
-<ul>
-<li><p>连接WiFi</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">itwctl<br>device list<br>station &lt;devicename<span class="hljs-comment">#一般是wlan0&gt; scan</span><br>station &lt;devicename&gt; get-networks<br>station &lt;devicename&gt; connect &lt;wifi名称&gt; <span class="hljs-comment">#如果知道devicename和WiFi名字,可以直接执行这一步</span><br><span class="hljs-keyword">exit</span><br></code></pre></td></tr></table></figure></li>
-<li><p>设置国内源</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">reflector -c China -a <span class="hljs-number">6</span> --sort rate --save <span class="hljs-regexp">/etc/</span>pacman.d/mirrorlist <span class="hljs-comment">#使用reflector来获取速度最快的6个镜像并保存到mirrorlist文件中。或：</span><br>nano <span class="hljs-regexp">/etc/</span>pacman.d/mirrorlist <span class="hljs-comment">#进入文件将第一个网址中间部分改为163,Ctrl+X保存#也可使用vim命令修改首先安装vim: pacman -S vim</span><br></code></pre></td></tr></table></figure></li>
-<li><p>磁盘准备</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">lsblk <span class="hljs-comment">#机械硬盘一般为sda，固态硬盘为nvme</span><br>cfdisk <span class="hljs-regexp">/dev/</span>nvme0n1<br>找到之前划分的空磁盘，选择new回车，输入大小回车，然后选择write回车，输入yes回车，最后选择quit回车退出<br>lsblk<br>mkfs.ext4 <span class="hljs-regexp">/dev/</span>nvme0n1p5 <span class="hljs-comment">#将刚刚分好的区格式化为ext4格式</span><br></code></pre></td></tr></table></figure></li>
-<li><p>挂载分区</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">mount <span class="hljs-regexp">/dev/</span>nvme0n1p5 /mnt <span class="hljs-comment">#上面新建的分区</span><br>lsblk <span class="hljs-comment">#找到win10的EFI分区</span><br>mkdir <span class="hljs-regexp">/mnt/</span>boot<br>mount <span class="hljs-regexp">/dev/</span>nvme0n1p2 <span class="hljs-regexp">/mnt/</span>boot <span class="hljs-comment">#挂载Win10的EFI分区</span><br></code></pre></td></tr></table></figure></li>
-<li><p>安装系统</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><code class="hljs csharp">pacstrap /mnt <span class="hljs-keyword">base</span> linux linux-firmware nano <span class="hljs-meta">#linux-firmware为默认内核，推荐使用linux-lts</span><br></code></pre></td></tr></table></figure></li>
-<li><p>生成fstab文件</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">genfstab -U <span class="hljs-regexp">/mnt &gt;&gt; /m</span>nt<span class="hljs-regexp">/etc/</span>fstab<br>cat <span class="hljs-regexp">/mnt/</span>etc/fstab <span class="hljs-comment">#检查生成的fstab是否正确（每个分区占一行）</span><br></code></pre></td></tr></table></figure></li>
-<li><p>配置新系统</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">arch-chroot /mnt<br>timedatectl set-timezone Asia/Shanghai <span class="hljs-comment">#设置时区</span><br>hwclock --systohc <span class="hljs-comment">#同步硬件时钟</span><br>nano <span class="hljs-regexp">/etc/</span>locale.gen<br>Ctrl+W 输入 <span class="hljs-comment">#en_US 回车 找到UTF-8那一行 删掉前面的#（取消注释）</span><br>Ctrl+W 输入 <span class="hljs-comment">#zh_CN 回车 找到UTF-8那一行 删掉前面的#（取消注释）</span><br>Ctrl+X保存退出<br>locale-gen<br>nano <span class="hljs-regexp">/etc/</span>locale.conf<br>填入内容：LANG=en_US.UTF-<span class="hljs-number">8</span><br>nano <span class="hljs-regexp">/etc/</span>hostname <span class="hljs-comment">#创建并写入hostname，(arch)</span><br>nano <span class="hljs-regexp">/etc/</span>hosts <span class="hljs-comment">#修改hosts(中间不是空格，而是tab)</span><br><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>	localhost<br>::<span class="hljs-number">1</span>		localhost<br><span class="hljs-number">127.0</span>.<span class="hljs-number">1.1</span>	arch.localdomain	arch<br>Ctrl+X保存退出<br>passwd <span class="hljs-comment">#为root用户创建密码</span><br>pacman -S grub efibootmgr networkmanager network-manager-applet dialog wireless_tools wpa_supplicant os-prober mtools dosfstools ntfs-<span class="hljs-number">3</span>g base-devel linux-headers reflector git sudo <span class="hljs-comment">#安装基本的包，使用grub引导，命令比较长，不要输错</span><br>grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch<br>grub-mkconfig -o <span class="hljs-regexp">/boot/g</span>rub/grub.cfg<br><span class="hljs-keyword">exit</span><br>umount -R /mnt<br>reboot <span class="hljs-comment">#拔出U盘</span><br></code></pre></td></tr></table></figure></li>
-<li><p>配置安装好的系统</p>
-<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><code class="hljs jboss-cli">systemctl start NetworkManager <span class="hljs-comment">#启动服务</span><br>systemctl enable <span class="hljs-params">--now</span> NetworkManager <span class="hljs-comment">#开机自启动服务</span><br>nmcli device wifi list <span class="hljs-comment">#连接WiFi</span><br>nmcli device wifi <span class="hljs-keyword">connect</span> wifi名 password wifi密码<br>useradd -m -G wheel -s <span class="hljs-string">/bin/bash</span> username <span class="hljs-comment">#创建普通用户</span><br>passwd username<br>EDITOR=nano visudo<br>Ctrl+W输入 <span class="hljs-comment"># %wheel 回车找到这行,删除前面的#（取消注释）</span><br>Ctrl+X保存退出<br></code></pre></td></tr></table></figure></li>
-<li><p>安装显卡驱动以及桌面</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">pacman -S xf86-video-intel(amdgpu) <span class="hljs-comment">#集显驱动</span><br>pacman -S nvidia nvidia-utils <span class="hljs-comment">#NVIDIA独显驱动</span><br>pacman -S xorg <span class="hljs-comment">#安装显示服务器</span><br>pacman -S sddm <span class="hljs-comment">#安装kde桌面环境</span><br>systemctl <span class="hljs-built_in">enable</span> sddm <span class="hljs-comment">#开机启动</span><br>pacman -S plasma kde-applications packagekit-qt5 <span class="hljs-comment">#桌面环境</span><br>pacman -S ttf-sarasa-gothic <span class="hljs-comment">#安装字体：更纱黑体</span><br>reboot<br></code></pre></td></tr></table></figure></li>
-</ul>
-<ol start="5">
-<li>开机即可进入桌面环境了</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo+Github 搭建博客</title>
     <url>/1797fdb5.html</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用github pages服务搭建博客的好处：</p>
@@ -134,27 +93,44 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/4a17b156.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>ArchLinux+Windows10双系统安装笔记</title>
+    <url>/307d4fd8.html</url>
+    <content><![CDATA[<h1 id="ArchLinux-Windows10双系统安装笔记"><a href="#ArchLinux-Windows10双系统安装笔记" class="headerlink" title="ArchLinux+Windows10双系统安装笔记"></a>ArchLinux+Windows10双系统安装笔记</h1><ol>
+<li>在磁盘管理分区，大小100G(随意大小)左右</li>
+<li>去<a href="https://archlinux.org/">官网</a>下载镜像，使用balenaEtcher将镜像写入U盘</li>
+<li>调整win10的EFI分区大小为500MB（谨慎操作，建议删除分区后重建，然后用dism++恢复引导）</li>
+<li>bios进行相关设置，开机选择从U盘启动</li>
+<li>进入安装页面，开始输入命令安装</li>
+</ol>
+<ul>
+<li><p>连接WiFi</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">itwctl<br>device list<br>station &lt;devicename<span class="hljs-comment">#一般是wlan0&gt; scan</span><br>station &lt;devicename&gt; get-networks<br>station &lt;devicename&gt; connect &lt;wifi名称&gt; <span class="hljs-comment">#如果知道devicename和WiFi名字,可以直接执行这一步</span><br><span class="hljs-keyword">exit</span><br></code></pre></td></tr></table></figure></li>
+<li><p>设置国内源</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">reflector -c China -a <span class="hljs-number">6</span> --sort rate --save <span class="hljs-regexp">/etc/</span>pacman.d/mirrorlist <span class="hljs-comment">#使用reflector来获取速度最快的6个镜像并保存到mirrorlist文件中。或：</span><br>nano <span class="hljs-regexp">/etc/</span>pacman.d/mirrorlist <span class="hljs-comment">#进入文件将第一个网址中间部分改为163,Ctrl+X保存#也可使用vim命令修改首先安装vim: pacman -S vim</span><br></code></pre></td></tr></table></figure></li>
+<li><p>磁盘准备</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">lsblk <span class="hljs-comment">#机械硬盘一般为sda，固态硬盘为nvme</span><br>cfdisk <span class="hljs-regexp">/dev/</span>nvme0n1<br>找到之前划分的空磁盘，选择new回车，输入大小回车，然后选择write回车，输入yes回车，最后选择quit回车退出<br>lsblk<br>mkfs.ext4 <span class="hljs-regexp">/dev/</span>nvme0n1p5 <span class="hljs-comment">#将刚刚分好的区格式化为ext4格式</span><br></code></pre></td></tr></table></figure></li>
+<li><p>挂载分区</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">mount <span class="hljs-regexp">/dev/</span>nvme0n1p5 /mnt <span class="hljs-comment">#上面新建的分区</span><br>lsblk <span class="hljs-comment">#找到win10的EFI分区</span><br>mkdir <span class="hljs-regexp">/mnt/</span>boot<br>mount <span class="hljs-regexp">/dev/</span>nvme0n1p2 <span class="hljs-regexp">/mnt/</span>boot <span class="hljs-comment">#挂载Win10的EFI分区</span><br></code></pre></td></tr></table></figure></li>
+<li><p>安装系统</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><code class="hljs csharp">pacstrap /mnt <span class="hljs-keyword">base</span> linux linux-firmware nano <span class="hljs-meta">#linux-firmware为默认内核，推荐使用linux-lts</span><br></code></pre></td></tr></table></figure></li>
+<li><p>生成fstab文件</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">genfstab -U <span class="hljs-regexp">/mnt &gt;&gt; /m</span>nt<span class="hljs-regexp">/etc/</span>fstab<br>cat <span class="hljs-regexp">/mnt/</span>etc/fstab <span class="hljs-comment">#检查生成的fstab是否正确（每个分区占一行）</span><br></code></pre></td></tr></table></figure></li>
+<li><p>配置新系统</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">arch-chroot /mnt<br>timedatectl set-timezone Asia/Shanghai <span class="hljs-comment">#设置时区</span><br>hwclock --systohc <span class="hljs-comment">#同步硬件时钟</span><br>nano <span class="hljs-regexp">/etc/</span>locale.gen<br>Ctrl+W 输入 <span class="hljs-comment">#en_US 回车 找到UTF-8那一行 删掉前面的#（取消注释）</span><br>Ctrl+W 输入 <span class="hljs-comment">#zh_CN 回车 找到UTF-8那一行 删掉前面的#（取消注释）</span><br>Ctrl+X保存退出<br>locale-gen<br>nano <span class="hljs-regexp">/etc/</span>locale.conf<br>填入内容：LANG=en_US.UTF-<span class="hljs-number">8</span><br>nano <span class="hljs-regexp">/etc/</span>hostname <span class="hljs-comment">#创建并写入hostname，(arch)</span><br>nano <span class="hljs-regexp">/etc/</span>hosts <span class="hljs-comment">#修改hosts(中间不是空格，而是tab)</span><br><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>	localhost<br>::<span class="hljs-number">1</span>		localhost<br><span class="hljs-number">127.0</span>.<span class="hljs-number">1.1</span>	arch.localdomain	arch<br>Ctrl+X保存退出<br>passwd <span class="hljs-comment">#为root用户创建密码</span><br>pacman -S grub efibootmgr networkmanager network-manager-applet dialog wireless_tools wpa_supplicant os-prober mtools dosfstools ntfs-<span class="hljs-number">3</span>g base-devel linux-headers reflector git sudo <span class="hljs-comment">#安装基本的包，使用grub引导，命令比较长，不要输错</span><br>grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch<br>grub-mkconfig -o <span class="hljs-regexp">/boot/g</span>rub/grub.cfg<br><span class="hljs-keyword">exit</span><br>umount -R /mnt<br>reboot <span class="hljs-comment">#拔出U盘</span><br></code></pre></td></tr></table></figure></li>
+<li><p>配置安装好的系统</p>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><code class="hljs jboss-cli">systemctl start NetworkManager <span class="hljs-comment">#启动服务</span><br>systemctl enable <span class="hljs-params">--now</span> NetworkManager <span class="hljs-comment">#开机自启动服务</span><br>nmcli device wifi list <span class="hljs-comment">#连接WiFi</span><br>nmcli device wifi <span class="hljs-keyword">connect</span> wifi名 password wifi密码<br>useradd -m -G wheel -s <span class="hljs-string">/bin/bash</span> username <span class="hljs-comment">#创建普通用户</span><br>passwd username<br>EDITOR=nano visudo<br>Ctrl+W输入 <span class="hljs-comment"># %wheel 回车找到这行,删除前面的#（取消注释）</span><br>Ctrl+X保存退出<br></code></pre></td></tr></table></figure></li>
+<li><p>安装显卡驱动以及桌面</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">pacman -S xf86-video-intel(amdgpu) <span class="hljs-comment">#集显驱动</span><br>pacman -S nvidia nvidia-utils <span class="hljs-comment">#NVIDIA独显驱动</span><br>pacman -S xorg <span class="hljs-comment">#安装显示服务器</span><br>pacman -S sddm <span class="hljs-comment">#安装kde桌面环境</span><br>systemctl <span class="hljs-built_in">enable</span> sddm <span class="hljs-comment">#开机启动</span><br>pacman -S plasma kde-applications packagekit-qt5 <span class="hljs-comment">#桌面环境</span><br>pacman -S ttf-sarasa-gothic <span class="hljs-comment">#安装字体：更纱黑体</span><br>reboot<br></code></pre></td></tr></table></figure></li>
+</ul>
+<ol start="5">
+<li>开机即可进入桌面环境了</li>
+</ol>
 ]]></content>
       <categories>
-        <category>Hello World</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>Hello World</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -356,6 +332,30 @@
       </categories>
       <tags>
         <tag>资源分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/4a17b156.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>Hello World</category>
+      </categories>
+      <tags>
+        <tag>Hello World</tag>
       </tags>
   </entry>
 </search>
