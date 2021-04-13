@@ -2,63 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://mrws.cf/posts/2adeb7d8/</loc>
+    <loc>https://blog.xpluto.top/posts/2adeb7d8/</loc>
     
-    <lastmod>2021-04-10</lastmod>
+    <lastmod>2021-04-13</lastmod>
     
   </url>
   
   <url>
-    <loc>http://mrws.cf/posts/4a17b156/</loc>
+    <loc>https://blog.xpluto.top/posts/4a17b156/</loc>
     
     <lastmod>2021-03-22</lastmod>
     
   </url>
   
   <url>
-    <loc>http://mrws.cf/posts/1797fdb5/</loc>
+    <loc>https://blog.xpluto.top/posts/1797fdb5/</loc>
     
     <lastmod>2021-03-22</lastmod>
     
   </url>
   
   <url>
-    <loc>http://mrws.cf/posts/307d4fd8/</loc>
+    <loc>https://blog.xpluto.top/posts/307d4fd8/</loc>
     
     <lastmod>2021-03-22</lastmod>
     
   </url>
   
   <url>
-    <loc>http://mrws.cf/posts/584214c1/</loc>
+    <loc>https://blog.xpluto.top/posts/584214c1/</loc>
     
     <lastmod>2021-03-22</lastmod>
     
   </url>
   
   <url>
-    <loc>http://mrws.cf/categories/index.html</loc>
+    <loc>https://blog.xpluto.top/categories/index.html</loc>
     
     <lastmod>2021-01-27</lastmod>
     
   </url>
   
   <url>
-    <loc>http://mrws.cf/link/index.html</loc>
+    <loc>https://blog.xpluto.top/link/index.html</loc>
     
     <lastmod>2021-01-24</lastmod>
     
   </url>
   
   <url>
-    <loc>http://mrws.cf/tags/index.html</loc>
+    <loc>https://blog.xpluto.top/tags/index.html</loc>
     
     <lastmod>2020-10-02</lastmod>
     
   </url>
   
   <url>
-    <loc>http://mrws.cf/about/index.html</loc>
+    <loc>https://blog.xpluto.top/about/index.html</loc>
     
     <lastmod>2020-07-09</lastmod>
     
@@ -66,7 +66,7 @@
   
 
   <url>
-    <loc>http://mrws.cf/</loc>
+    <loc>https://blog.xpluto.top/</loc>
     <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -74,21 +74,21 @@
 
   
   <url>
-    <loc>http://mrws.cf/tags/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://blog.xpluto.top/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://mrws.cf/tags/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/</loc>
+    <loc>https://blog.xpluto.top/tags/Hello-World/</loc>
     <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://mrws.cf/tags/Hello-World/</loc>
+    <loc>https://blog.xpluto.top/tags/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -97,28 +97,28 @@
 
   
   <url>
-    <loc>http://mrws.cf/categories/Hexo-Git-NPM/</loc>
+    <loc>https://blog.xpluto.top/categories/Linux/</loc>
     <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://mrws.cf/categories/Linux/</loc>
+    <loc>https://blog.xpluto.top/categories/Hexo-Git-NPM/</loc>
     <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://mrws.cf/categories/software/</loc>
+    <loc>https://blog.xpluto.top/categories/Hello-World/</loc>
     <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://mrws.cf/categories/Hello-World/</loc>
+    <loc>https://blog.xpluto.top/categories/software/</loc>
     <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
