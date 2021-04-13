@@ -67,7 +67,7 @@
 
   <url>
     <loc>http://mrws.cf/</loc>
-    <lastmod>2021-04-12</lastmod>
+    <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,21 +75,21 @@
   
   <url>
     <loc>http://mrws.cf/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2021-04-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://mrws.cf/tags/Hello-World/</loc>
-    <lastmod>2021-04-12</lastmod>
+    <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://mrws.cf/tags/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/</loc>
-    <lastmod>2021-04-12</lastmod>
+    <lastmod>2021-04-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://mrws.cf/tags/Hello-World/</loc>
+    <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -97,29 +97,29 @@
 
   
   <url>
-    <loc>http://mrws.cf/categories/Linux/</loc>
-    <lastmod>2021-04-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://mrws.cf/categories/Hello-World/</loc>
-    <lastmod>2021-04-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://mrws.cf/categories/Hexo-Git-NPM/</loc>
-    <lastmod>2021-04-12</lastmod>
+    <lastmod>2021-04-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://mrws.cf/categories/Linux/</loc>
+    <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://mrws.cf/categories/software/</loc>
-    <lastmod>2021-04-12</lastmod>
+    <lastmod>2021-04-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://mrws.cf/categories/Hello-World/</loc>
+    <lastmod>2021-04-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
