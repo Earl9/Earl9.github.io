@@ -1,0 +1,19 @@
+{
+  "defaultViewMode": "preview",
+  "communityPluginSortOrder": "download",
+  "promptDelete": false,
+  "communityThemeSortOrder": "download",
+  "showFrontmatter": true,
+  "readableLineLength": true,
+  "fileSortOrder": "alphabetical",
+  "strictLineBreaks": true,
+  "alwaysUpdateLinks": true,
+  "legacyEditor": false,
+  "livePreview": true,
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
+}

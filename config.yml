@@ -1,0 +1,138 @@
+baseURL: "https://www.wilds.top/"
+title: Earlのblog
+paginate: 6
+theme: PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+
+googleAnalytics: G-K1T3V5VR8S
+
+minify:
+    disableXML: true
+    minifyOutput: true
+
+
+Params:
+    env: production
+    comments: true
+    cover:
+      responsiveImages: false
+    # disableThemeToggle: true
+    ShowShareButtons: false
+    ShowReadingTime: true
+    # disableSpecial1stPost: true
+    displayFullLangName: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowToc: true
+    images: ["papermod-cover.png"]
+    # profile-mode
+    profileMode:
+            enabled: true
+            title: Earl
+            imageUrl: "https://gitee.com/earl9/img/raw/master/img/2022/02/230223193452.webp"
+            # imageTitle: my image
+            imageWidth: 120
+            imageHeight: 120
+            subtitle: "如同这雨，生于天，死于地，这中间的便是人生。"
+            # subtitle: "☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive"
+            buttons:
+                - name: Blog
+                  url: posts
+                - name: Tags
+                  url: tags
+
+    socialIcons:
+        - name: github
+          url: "https://github.com/earl9"
+        # - name: KoFi
+        #   url: "https://ko-fi.com/adityatelange"
+        - name: qq
+          url: "http://wpa.qq.com/msgrd?v=3&uin=2629592381&site=qq&menu=yes"
+        - name: email
+          url: "mailto:2629592381@qq.com"
+        - name: telegram
+          url: "https://t.me/Earl699"
+        - name: instagram
+          url: "https://instagram.com"
+        - name: RsS
+          url: "index.xml"
+          
+    defaultTheme: auto # to switch between dark or light according to browser theme
+    
+    fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 1000
+        threshold: 0.4
+        minMatchCharLength: 0
+        keys: ["title", "permalink", "summary", "content"]
+        
+    cover:
+        hidden: true # hide everywhere but not in structured data
+        hiddenInList: true # hide on list pages and home
+        hiddenInSingle: true # hide on single page
+
+    article:
+      enabled: true
+
+      
+menu:
+    main:
+        - name: 
+          pre: <i class='fa fa-search'></i>
+          url: search
+          weight: 4
+        - name: Archive
+          url: archives/
+          weight: 5
+        - name: Tags
+          url: tags
+          weight: 5
+        - name: Categories
+          url: categories
+          weight: 5
+        - name: Friends
+          url: "friends/"
+          weight: 10
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: false
+    style: tomorrow
+    tabWidth: 4
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+permalinks:
+    posts："/post/:slug"
+assets:
+    favicon: "favicon.ico"
+    favicon16x16:  "https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/17174348-2.webp"
+    favicon32x32:  "https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/17174348-2.webp"
+    apple_touch_icon:  "https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/17174348-2.webp"
+    safari_pinned_tab:  "https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/17174348-2.webp"
+    # favicon16x16:  "/favicon-16x16.png"
+    # favicon32x32:  "/favicon-32x32.png"
+    # apple_touch_icon:  "/apple-touch-icon.png"
+    # safari_pinned_tab:  "/safari-pinned-tab.svg"
+taxonomies:
+  category: categories
+  tag: tags
+  series: series

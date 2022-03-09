@@ -1,0 +1,141 @@
+{
+  "main": {
+    "id": "139cbebf2cfd8168",
+    "type": "split",
+    "children": [
+      {
+        "id": "f1426b714125763f",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "笔记.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "31f3dd24900907fb",
+    "type": "split",
+    "children": [
+      {
+        "id": "6cda814c559608b2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4c6b31280a50f428",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "835720b1fea4dfc8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 196.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "3c9973845b2b290d",
+    "type": "split",
+    "children": [
+      {
+        "id": "8ccc4a7225606de4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e093dcb380feaa8d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "笔记.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "84cbf80d0ac33d7a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "笔记.md"
+              }
+            }
+          },
+          {
+            "id": "7e5c9ac9027f5e8f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "笔记.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "854776bcf2f1b3f9",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_nodes",
+              "state": {}
+            }
+          },
+          {
+            "id": "fb0b3fd985b53541",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_style",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 351.5,
+    "collapsed": true
+  },
+  "active": "f1426b714125763f",
+  "lastOpenFiles": [
+    "笔记.md",
+    "总结.md",
+    "Excalidraw/Drawing 2021-12-22 16.52.24.excalidraw.md",
+    "Cryptomator.md",
+    "Pasted Image 20211217233209_700.png",
+    "JD.md",
+    "Excalidraw/Drawing 2021-12-17 23.06.22.excalidraw.md",
+    "Pasted Image 20211218001601_086.png",
+    "Pasted Image 20211218003410_744.png",
+    "Pasted Image 20211218002128_582.png"
+  ]
+}
