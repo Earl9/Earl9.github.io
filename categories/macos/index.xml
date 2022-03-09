@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>macOS on Earlのblog</title>
+    <link>https://www.wilds.top/categories/macos/</link>
+    <description>Recent content in macOS on Earlのblog</description>
+    <image>
+      <url>https://www.wilds.top/papermod-cover.png</url>
+      <link>https://www.wilds.top/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 05 Nov 2021 22:59:29 +0800</lastBuildDate><atom:link href="https://www.wilds.top/categories/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hackintosh安装</title>
+      <link>https://www.wilds.top/posts/99c03bb5/</link>
+      <pubDate>Fri, 05 Nov 2021 22:59:29 +0800</pubDate>
+      
+      <guid>https://www.wilds.top/posts/99c03bb5/</guid>
+      <description>黑苹果安装记录</description>
+    </item>
+    
+  </channel>
+</rss>

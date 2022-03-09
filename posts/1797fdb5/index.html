@@ -1,0 +1,264 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Hexo+Github 搭建博客 | Earlのblog</title>
+<meta name=keywords content="教程">
+<meta name=description content="“0”基础搭建个人博客">
+<meta name=author content>
+<link rel=canonical href=https://www.wilds.top/posts/1797fdb5/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.a1a1073ca47c48aad5c688a1c98be56e6c93d809db1f643397d7fbc03356fe0f.css integrity="sha256-oaEHPKR8SKrVxoihyYvlbmyT2AnbH2Qzl9f7wDNW/g8=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://www.wilds.top/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://www.wilds.top/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://www.wilds.top/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://www.wilds.top/apple-touch-icon.png>
+<link rel=mask-icon href=https://www.wilds.top/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.91.2">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><style type=text/css>@font-face{font-family:myFont;src:url(https://git.wxfljc.cn/Earl/static/raw/branch/master/font/yuan.woff)}</style>
+<link rel=stylesheet href=https://git.wxfljc.cn/Earl/static/raw/branch/master/js/highlight.min.js>
+<script src=https://git.wxfljc.cn/Earl/static/raw/branch/master/css/androidstudio.min.css></script>
+<script>hljs.highlightAll()</script>
+<style>body{font-family:myFont,DFPHannotateW5-GB,SimHei,-apple-system,BlinkMacSystemFont,YouYuan,NSimSun,Yuanti SC,KaiTi,open sans,PingFang SC,sans-serif;font-size:19px}code{font-family:myFont,DFPHannotateW5-GB,SimHei,DFPHannotateW5-GB,-apple-system,BlinkMacSystemFont,YouYuan,NSimSun,KaiTi,Yuanti SC,Yuanti SC,open sans,sans-serif}</style>
+<link rel=stylesheet href=https://git.wxfljc.cn/Earl/static/raw/branch/master/css/font-awesome.min.css>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K1T3V5VR8S"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-K1T3V5VR8S',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="Hexo+Github 搭建博客">
+<meta property="og:description" content="“0”基础搭建个人博客">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.wilds.top/posts/1797fdb5/"><meta property="og:image" content="https://www.wilds.top/papermod-cover.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2020-07-16T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-07-16T00:00:00+00:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://www.wilds.top/papermod-cover.png">
+<meta name=twitter:title content="Hexo+Github 搭建博客">
+<meta name=twitter:description content="“0”基础搭建个人博客">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://www.wilds.top/posts/"},{"@type":"ListItem","position":2,"name":"Hexo+Github 搭建博客","item":"https://www.wilds.top/posts/1797fdb5/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Hexo+Github 搭建博客","name":"Hexo\u002bGithub 搭建博客","description":"“0”基础搭建个人博客","keywords":["教程"],"articleBody":"前言 使用github pages服务搭建博客的好处：\n 全是静态文件，访问速度快了； 免费，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器； 数据绝对安全，基于github的版本管理； 博客内容可以轻松打包、转移、发布到其它平台；  准备环境 首先安装Node.js®\n安装过程直接点next就行，有需要的可以改一下安装位置。\n安装Git\n安装过程同上。\n在安装完 Git 和 Node.js 后在任意文件夹右键打开 Git bash here 即可打开 Git 的 Bash 终端\n然后在git终端输入以下命令，查看查看 git 和 npm 版本号：\ngit --version\rNPM -v\r如果你的配置没问题，就会得到如下运行结果：\n安装hexo 完成上面操作后，就可以安装hexo了，也可查看hexo官方文档。\n在Git Bash 里执行以下命令：\nnpm install -g hexo-cli\rhexo安装完成后，在想要存储 hexo 文件的目录打开 Git Bash，然后初始化hexo，比如我想要在 D 盘的一个名为 hexo 的文件夹进行写作，那我在 D 盘打开 Git Bash 使用下面的命令初始化 Hexo 博客：\nhexo init hexo\r新建完成后，指定的文件夹目录如下：\n.\r├── _config.yml # Hexo的全局配置文件，在此配置网站的主要参数\r├── package.json # npm软件包以及版本信息\r├── scaffolds # 模版文件夹\r├── source # 资源文件夹\r| ├── _drafts # 草稿/模板文件\r| └── _posts # 文章Markdowm文件 └── themes # 主题文件夹\r然后安装一些组件\nnpm install\r安装好后，执行以下命令\nhexo g #generate 生成静态文件\rhexo s #server 启动服务器。\r默认情况下，访问网址为： http://localhost:4000/，打开网址，页码如下图：\n如果上面 hexo s 没有成功，可能是本地的 4000 端口被占用，请使用 hexo s -p 端口号 修改本地预览的端口号，然后打开浏览器，输入 http://localhost:你的端口号来启动本地预览.\n至此，你的本地博客已经搭建成功，接下来是部署到Github Page。\n关联Github 首先注册一个github账号（如何注册这里就不说了）\n登录到github，新建一个名为 username.github.io的公开仓库（私有仓库不能访问）其中username 是你的 github 用户名，例如我的用户名是 Test，那么我新建的仓库名称即为Test.github.io\n链接github与本地\n打开Git Bash，输入以下命令：\ngit config --global user.name \"username\" # username是你的Github用户名，注意大小写保持一致\rgit config --global user.email \"your email address\" # your email address填写你的Github注册用的邮箱\rssh-keygen -t rsa -C \"your email address\" # 生成SSH公钥，your email address同上填\r完成上面步骤后默认生成的密钥在 C:\\Users\\用户名\\.ssh\\ 目录下，以文本编辑器打开 id_rsa.pub 文件，复制里面的所有内容，后面会用到\n在github页面点击头像打开setting\n选择 SSH and GPG Keys，点击 New SSH Key\nTitle随便填，Key填你在本地id_rsa.pub文件中复制的所有内容\n打开 Git Bash，输入以下命令:\nssh -T git@github.com\r出现图中的提示代表成功了：(Hi 用户名！You’ve successfully authenticated，but……)\n打开 hexo 目录下的_config.yml 文件，修改最后一行的 deploy 配置信息：\ndeploy:\rtype: git\rrepo:\rgithub: https://github.com/username/username.github.io.git # 将username修改成你的Github用户名\rbranch: master 打开 Git Bash，输入如下命令：\nnpm install hexo-deployer-git --save\r推送到github仓库\nhexo clean \u0026\u0026 hexo g \u0026\u0026 hexo d\r如果前面没有出错的话，再次执行上面命令，你发现 hexo d 后本地预览的博客已经推送到你的远程仓库了，并且浏览器地址输入username.github.io 可以访问你的博客了，代表关联 Hexo 到 Github 成功了！\nhexo的命令极简单，安装后只需要记住四个常用的基础命令即可。执行命令需要git当前处于blog文件夹根目下\nhexo g #generate 生成静态文件\rhexo s #server 启动服务器。在本地预览效果，默认情况下，访问网址为： http://localhost:4000/\rhexo d #deploy 部署网站同步到github。部署网站前，需要预先生成静态文件\rhexo clean #clean 清除缓存文件 (db.json) 和已生成的静态文件 (public)。\rhexo高级配置 hexo有许多主题，目前大多数人使用next主题，本站使用的butterfly主题，安装过程如下：\ngit clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly\r安装完还需要修改hexo的配置文件_config.yml:\ntheme: landscape # 默认的主题\rtheme: 修改为你的主题名\r个人推荐主题\n butterfly 详细设置可以看butterfly官方文档 fluid 详细设置可以看官方文档Fluid  插件推荐\n 压缩生成文件hexo-all-minifier 生成文章永久链接hexo-abbrlink 看板娘hexo-helper-live2d  ","wordCount":"274","inLanguage":"en","datePublished":"2020-07-16T00:00:00Z","dateModified":"2020-07-16T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.wilds.top/posts/1797fdb5/"},"publisher":{"@type":"Organization","name":"Earlのblog","logo":{"@type":"ImageObject","url":"https://www.wilds.top/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://www.wilds.top/ accesskey=h title="Earlのblog (Alt + H)">Earlのblog</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://www.wilds.top/search title>
+<span><i class="fa fa-search"></i></span>
+</a>
+</li>
+<li>
+<a href=https://www.wilds.top/archives/ title=Archive>
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href=https://www.wilds.top/categories title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://www.wilds.top/tags title=Tags>
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href=https://www.wilds.top/friends/ title=Friends>
+<span>Friends</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://www.wilds.top/>Home</a>&nbsp;»&nbsp;<a href=https://www.wilds.top/posts/>Posts</a></div>
+<h1 class=post-title>
+Hexo+Github 搭建博客
+</h1>
+<div class=post-description>
+“0”基础搭建个人博客
+</div>
+<div class=post-meta><span title="2020-07-16 00:00:00 +0000 UTC">July 16, 2020</span>&nbsp;·&nbsp;2 min
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#%e5%89%8d%e8%a8%80 aria-label=前言>前言</a></li>
+<li>
+<a href=#%e5%87%86%e5%a4%87%e7%8e%af%e5%a2%83 aria-label=准备环境>准备环境</a></li>
+<li>
+<a href=#%e5%ae%89%e8%a3%85hexo aria-label=安装hexo>安装hexo</a></li>
+<li>
+<a href=#%e5%85%b3%e8%81%94github aria-label=关联Github>关联Github</a></li>
+<li>
+<a href=#hexo%e9%ab%98%e7%ba%a7%e9%85%8d%e7%bd%ae aria-label=hexo高级配置>hexo高级配置</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=前言>前言<a hidden class=anchor aria-hidden=true href=#前言>#</a></h2>
+<p>使用github pages服务搭建博客的好处：</p>
+<ol>
+<li>全是静态文件，访问速度快了；</li>
+<li>免费，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器；</li>
+<li>数据绝对安全，基于github的版本管理；</li>
+<li>博客内容可以轻松打包、转移、发布到其它平台；</li>
+</ol>
+<h2 id=准备环境>准备环境<a hidden class=anchor aria-hidden=true href=#准备环境>#</a></h2>
+<p>首先安装<a href=https://nodejs.org/en/download/>Node.js®</a></p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803182016.png alt>
+</p>
+<p>安装过程直接点next就行，有需要的可以改一下安装位置。</p>
+<p>安装<a href=https://git-scm.com/>Git</a></p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803182017.png alt>
+</p>
+<p>安装过程同上。</p>
+<p>在安装完 <code>Git </code>和 <code>Node.js</code> 后在任意文件夹右键打开 Git bash here 即可打开 Git 的 Bash 终端</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803182018.png alt>
+</p>
+<p>然后在git终端输入以下命令，查看查看 git 和 npm 版本号：</p>
+<pre tabindex=0><code>git --version
+NPM -v
+</code></pre><p>如果你的配置没问题，就会得到如下运行结果：</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803182019.png alt>
+</p>
+<h2 id=安装hexo>安装hexo<a hidden class=anchor aria-hidden=true href=#安装hexo>#</a></h2>
+<p>完成上面操作后，就可以安装hexo了，也可查看<a href=https://hexo.io/zh-cn/>hexo</a>官方文档。</p>
+<p>在Git Bash 里执行以下命令：</p>
+<pre tabindex=0><code>npm install -g hexo-cli
+</code></pre><p>hexo安装完成后，在想要存储 hexo 文件的目录打开 Git Bash，然后初始化hexo，比如我想要在 D 盘的一个名为 hexo 的文件夹进行写作，那我在 D 盘打开 Git Bash 使用下面的命令初始化 Hexo 博客：</p>
+<pre tabindex=0><code>hexo init hexo
+</code></pre><p>新建完成后，指定的文件夹目录如下：</p>
+<pre tabindex=0><code>.
+├── _config.yml # Hexo的全局配置文件，在此配置网站的主要参数
+├── package.json # npm软件包以及版本信息
+├── scaffolds # 模版文件夹
+├── source  # 资源文件夹
+|   ├── _drafts # 草稿/模板文件
+|   └── _posts # 文章Markdowm文件 
+└── themes  # 主题文件夹
+
+</code></pre><p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803182020.png alt>
+</p>
+<p>然后安装一些组件</p>
+<pre tabindex=0><code>npm install
+</code></pre><p>安装好后，执行以下命令</p>
+<pre tabindex=0><code>hexo g #generate 生成静态文件
+hexo s #server 启动服务器。
+</code></pre><p>默认情况下，访问网址为： <a href=http://localhost:4000/>http://localhost:4000/</a>，打开网址，页码如下图：</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803182022.png alt>
+</p>
+<p>如果上面 <code>hexo s </code>没有成功，可能是本地的 4000 端口被占用，请使用 <code>hexo s -p 端口号</code> 修改本地预览的端口号，然后打开浏览器，输入 <code>http://localhost:你的端口号</code>来启动本地预览.</p>
+<p>至此，你的本地博客已经搭建成功，接下来是部署到Github Page。</p>
+<h2 id=关联github>关联Github<a hidden class=anchor aria-hidden=true href=#关联github>#</a></h2>
+<p>首先注册一个github账号（如何注册这里就不说了）</p>
+<p>登录到github，新建一个名为<code> username.github.io</code>的公开仓库（私有仓库不能访问）其中<code>username</code> 是你的 github 用户名，例如我的用户名是 <code>Test</code>，那么我新建的仓库名称即为<code>Test.github.io</code></p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803182023.png alt>
+</p>
+<p>链接github与本地</p>
+<p>打开Git Bash，输入以下命令：</p>
+<pre tabindex=0><code>git config --global user.name &quot;username&quot; # username是你的Github用户名，注意大小写保持一致
+git config --global user.email &quot;your email address&quot; # your email address填写你的Github注册用的邮箱
+ssh-keygen -t rsa -C &quot;your email address&quot;  # 生成SSH公钥，your email address同上填
+</code></pre><p>完成上面步骤后默认生成的密钥在 <code>C:\Users\用户名\.ssh\</code> 目录下，以文本编辑器打开 <code>id_rsa.pub</code> 文件，复制里面的所有内容，后面会用到</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803182025.png alt>
+</p>
+<p>在github页面点击头像打开<code>setting</code></p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803182029.png alt>
+</p>
+<p>选择 <code>SSH and GPG Keys</code>，点击 <code>New SSH Key</code></p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803182031.png alt>
+</p>
+<p><code>Title</code>随便填，<code>Key</code>填你在本地<code>id_rsa.pub</code>文件中复制的所有内容</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803182032.png alt>
+</p>
+<p>打开 Git Bash，输入以下命令:</p>
+<pre tabindex=0><code>ssh -T git@github.com
+</code></pre><p>出现图中的提示代表成功了：(Hi 用户名！You’ve successfully authenticated，but……)</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/03/1803182033.png alt>
+</p>
+<p>打开 hexo 目录下的<code>_config.yml </code>文件，修改最后一行的 deploy 配置信息：</p>
+<pre tabindex=0><code>deploy:
+  type: git
+  repo:
+    github: https://github.com/username/username.github.io.git # 将username修改成你的Github用户名
+  branch: master 
+</code></pre><p>打开 Git Bash，输入如下命令：</p>
+<pre tabindex=0><code>npm install hexo-deployer-git --save
+</code></pre><p>推送到github仓库</p>
+<pre tabindex=0><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre><p>如果前面没有出错的话，再次执行上面命令，你发现 hexo d 后本地预览的博客已经推送到你的远程仓库了，并且浏览器地址输入<code>username.github.io </code>可以访问你的博客了，代表关联 Hexo 到 Github 成功了！</p>
+<p>hexo的命令极简单，安装后只需要记住四个常用的基础命令即可。执行命令需要git当前处于blog文件夹根目下</p>
+<pre tabindex=0><code>hexo g #generate 生成静态文件
+hexo s #server 启动服务器。在本地预览效果，默认情况下，访问网址为： http://localhost:4000/
+hexo d #deploy 部署网站同步到github。部署网站前，需要预先生成静态文件
+hexo clean #clean 清除缓存文件 (db.json) 和已生成的静态文件 (public)。
+</code></pre><h2 id=hexo高级配置>hexo高级配置<a hidden class=anchor aria-hidden=true href=#hexo高级配置>#</a></h2>
+<p>hexo有许多主题，目前大多数人使用<code>next</code>主题，本站使用的<code>butterfly</code>主题，安装过程如下：</p>
+<pre tabindex=0><code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
+</code></pre><p>安装完还需要修改hexo的配置文件<code>_config.yml</code>:</p>
+<pre tabindex=0><code>theme: landscape # 默认的主题
+theme:  修改为你的主题名
+</code></pre><p>个人推荐主题</p>
+<ul>
+<li><a href=https://github.com/jerryc127/hexo-theme-butterfly>butterfly</a> 详细设置可以看<a href=https://demo.jerryc.me/>butterfly</a>官方文档</li>
+<li><a href=https://github.com/fluid-dev/hexo-theme-fluid>fluid</a> 详细设置可以看官方文档<a href=https://hexo.fluid-dev.com/docs/start/#%E4%B8%BB%E9%A2%98%E7%AE%80%E4%BB%8B>Fluid</a></li>
+</ul>
+<p>插件推荐</p>
+<ul>
+<li>压缩生成文件<a href=https://github.com/chenzhutian/hexo-all-minifier>hexo-all-minifier</a></li>
+<li>生成文章永久链接<a href=https://github.com/rozbo/hexo-abbrlink>hexo-abbrlink</a></li>
+<li>看板娘<a href=https://github.com/EYHN/hexo-helper-live2d>hexo-helper-live2d</a></li>
+</ul>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://www.wilds.top/tags/%E6%95%99%E7%A8%8B/>教程</a></li>
+</ul>
+<nav class=paginav>
+<a class=prev href=https://www.wilds.top/posts/307d4fd8/>
+<span class=title>« Prev Page</span>
+<br>
+<span>ArchLinux+Windows10双系统安装笔记</span>
+</a>
+</nav>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://www.wilds.top/>Earlのblog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script src=https://git.wxfljc.cn/Earl/static/raw/branch/master/js/l2dwidget.min.js></script>
+<script>var hijiki='/hijiki/assets/hijiki.model.json',config;function show(a){config.model.jsonPath=a,L2Dwidget.init(config)}config={model:{jsonPath:''},display:{superSample:1,width:180,height:290,position:'lift',hOffset:0,vOffset:0},mobile:{show:!0,scale:.75,motion:!0},react:{opacityDefault:1,opacityOnHover:1}},window.onload=function(){show(hijiki)}</script>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+<script>document.querySelectorAll('pre > code').forEach(b=>{const c=b.parentNode.parentNode,a=document.createElement('button');a.classList.add('copy-code'),a.innerText='copy';function d(){a.innerText='copied!',setTimeout(()=>{a.innerText='copy'},2e3)}a.addEventListener('click',e=>{if('clipboard'in navigator){navigator.clipboard.writeText(b.textContent),d();return}const a=document.createRange();a.selectNodeContents(b);const c=window.getSelection();c.removeAllRanges(),c.addRange(a);try{document.execCommand('copy'),d()}catch(a){}c.removeRange(a)}),c.classList.contains("highlight")?c.appendChild(a):c.parentNode.firstChild==c||(b.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?b.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(a):b.parentNode.appendChild(a))})</script>
+</body>
+</html>

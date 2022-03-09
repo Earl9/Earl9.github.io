@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>教程 on Earlのblog</title>
+    <link>https://www.wilds.top/tags/%E6%95%99%E7%A8%8B/</link>
+    <description>Recent content in 教程 on Earlのblog</description>
+    <image>
+      <url>https://www.wilds.top/papermod-cover.png</url>
+      <link>https://www.wilds.top/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 05 Nov 2021 22:59:29 +0800</lastBuildDate><atom:link href="https://www.wilds.top/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hackintosh安装</title>
+      <link>https://www.wilds.top/posts/99c03bb5/</link>
+      <pubDate>Fri, 05 Nov 2021 22:59:29 +0800</pubDate>
+      
+      <guid>https://www.wilds.top/posts/99c03bb5/</guid>
+      <description>黑苹果安装记录</description>
+    </item>
+    
+    <item>
+      <title>宝塔破解面板破解</title>
+      <link>https://www.wilds.top/posts/9f22989d/</link>
+      <pubDate>Mon, 25 Oct 2021 22:37:02 +0800</pubDate>
+      
+      <guid>https://www.wilds.top/posts/9f22989d/</guid>
+      <description>宝塔高级功能解锁</description>
+    </item>
+    
+    <item>
+      <title>OneManager搭建教程</title>
+      <link>https://www.wilds.top/posts/0adbf5e5/</link>
+      <pubDate>Tue, 19 Oct 2021 22:44:25 +0800</pubDate>
+      
+      <guid>https://www.wilds.top/posts/0adbf5e5/</guid>
+      <description>利用OneManager搭建网盘</description>
+    </item>
+    
+    <item>
+      <title>WindowsTerminal美化</title>
+      <link>https://www.wilds.top/posts/353f4593/</link>
+      <pubDate>Tue, 19 Oct 2021 22:41:18 +0800</pubDate>
+      
+      <guid>https://www.wilds.top/posts/353f4593/</guid>
+      <description>终端美化，告别传统黑窗口</description>
+    </item>
+    
+    <item>
+      <title>picgo&#43;github搭建图床</title>
+      <link>https://www.wilds.top/posts/584214c1/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wilds.top/posts/584214c1/</guid>
+      <description>利用github搭建免费个人图床</description>
+    </item>
+    
+    <item>
+      <title>ArchLinux&#43;Windows10双系统安装笔记</title>
+      <link>https://www.wilds.top/posts/307d4fd8/</link>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wilds.top/posts/307d4fd8/</guid>
+      <description>archLinux探索</description>
+    </item>
+    
+    <item>
+      <title>Hexo&#43;Github 搭建博客</title>
+      <link>https://www.wilds.top/posts/1797fdb5/</link>
+      <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wilds.top/posts/1797fdb5/</guid>
+      <description>“0”基础搭建个人博客</description>
+    </item>
+    
+  </channel>
+</rss>

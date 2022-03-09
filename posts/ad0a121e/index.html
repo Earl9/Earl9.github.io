@@ -1,0 +1,559 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>ArrayList经典面试题 | Earlのblog</title>
+<meta name=keywords content="Java">
+<meta name=description content="ArrayList源码分析">
+<meta name=author content>
+<link rel=canonical href=https://www.wilds.top/posts/ad0a121e/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.a1a1073ca47c48aad5c688a1c98be56e6c93d809db1f643397d7fbc03356fe0f.css integrity="sha256-oaEHPKR8SKrVxoihyYvlbmyT2AnbH2Qzl9f7wDNW/g8=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://www.wilds.top/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://www.wilds.top/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://www.wilds.top/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://www.wilds.top/apple-touch-icon.png>
+<link rel=mask-icon href=https://www.wilds.top/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.91.2">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><style type=text/css>@font-face{font-family:myFont;src:url(https://git.wxfljc.cn/Earl/static/raw/branch/master/font/yuan.woff)}</style>
+<link rel=stylesheet href=https://git.wxfljc.cn/Earl/static/raw/branch/master/js/highlight.min.js>
+<script src=https://git.wxfljc.cn/Earl/static/raw/branch/master/css/androidstudio.min.css></script>
+<script>hljs.highlightAll()</script>
+<style>body{font-family:myFont,DFPHannotateW5-GB,SimHei,-apple-system,BlinkMacSystemFont,YouYuan,NSimSun,Yuanti SC,KaiTi,open sans,PingFang SC,sans-serif;font-size:19px}code{font-family:myFont,DFPHannotateW5-GB,SimHei,DFPHannotateW5-GB,-apple-system,BlinkMacSystemFont,YouYuan,NSimSun,KaiTi,Yuanti SC,Yuanti SC,open sans,sans-serif}</style>
+<link rel=stylesheet href=https://git.wxfljc.cn/Earl/static/raw/branch/master/css/font-awesome.min.css>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K1T3V5VR8S"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-K1T3V5VR8S',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="ArrayList经典面试题">
+<meta property="og:description" content="ArrayList源码分析">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.wilds.top/posts/ad0a121e/"><meta property="og:image" content="https://www.wilds.top/papermod-cover.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-12-31T00:06:54+08:00">
+<meta property="article:modified_time" content="2021-12-31T00:06:54+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://www.wilds.top/papermod-cover.png">
+<meta name=twitter:title content="ArrayList经典面试题">
+<meta name=twitter:description content="ArrayList源码分析">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://www.wilds.top/posts/"},{"@type":"ListItem","position":2,"name":"ArrayList经典面试题","item":"https://www.wilds.top/posts/ad0a121e/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"ArrayList经典面试题","name":"ArrayList经典面试题","description":"ArrayList源码分析","keywords":["Java"],"articleBody":"【 ArrayList集合 】 关于集合的常见面试题及源码分析 1. 什么是集合?  集合：集合是java中提供的一种容器，可以把多个对象（实际上是对象的引用，但习惯上都称对象）“丢进”该容器中。大致可以分为Set、List、Queue和Map四种体系，其中Set代表无序、不可重复的集合；List代表有序、可重复的集合；而Map则代表具有映射关系的集合，Java 5 又增加了Queue体系集合，代表一种队列集合实现。  2. 集合类之间的继承关系? 集合类主要由两个接口派生而出，分别是单列集合Collection和双列集合Map，它们是Java集合框架的根接口。\n Collection：单列集合类的根接口，用于存储一系列符合某种规则的元素，它有两个重要的子接口，分别是List和Set。其中，List的特点是元素有序、元素可重复。Set的特点是元素无序，而且不可重复。List接口的主要实现类有ArrayList和LinkedList，Set接口的主要实现类有HashSet和TreeSet。  从上面的描述可以看出JDK中提供了丰富的集合类库，为了便于系统地学习，接下来通过一张图来描述集合类的继承体系。\n图中，ArrayList,HashSet,LinkedList,TreeSet是我们经常会有用到的已实现的集合类。\nMap实现类用于保存具有映射关系的数据。Map保存的每项数据都是key-value对，也就是由key和value两个值组成。Map里的key是不可重复的。\n图中，HashMap，TreeMap是我们经常会用到的集合类。\n3. 集合和数组的区别? ​\t1:长度区别 ​ 数组固定 ​ 集合可变 ​ 2:内容区别 ​ 数组可以是基本类型，也可以是引用类型 ​ 集合只能是引用类型 ​ 3:类型区别 ​ 数组只能存储同一种类型 ​ 集合可以存储不同类型\n如果存储的数据长度经常发生改变，推荐使用集合\n4. ArrayList扩容原理？ 4.1.步骤 ​ 1、扩容\n​ 把原来的数组复制到另一个内存空间更大的数组中\n​ 2、添加元素\n​ 把新元素添加到扩容以后的数组中\n4.2.源码(JKD1.8) 先把ArrayList中定义的一些属性粘出来方便下面源码分析\njava\npublic class ArrayListE extends AbstractListE implements ListE, RandomAccess, Cloneable, java.io.Serializable { /** * 默认初始容量 */ private static final int DEFAULT_CAPACITY = 10; /** * 空数组实例 */ private static final Object[] EMPTY_ELEMENTDATA = {}; /** *空数组实例，用于默认大小的空实例 */ private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {}; /** *如果新建ArrayList对象时没有指定大小，那么会将 *DEFAULTCAPACITY_EMPTY_ELEMENTDATA赋值给elementData， *并在第一次添加元素时，将列表容量设置为DEFAULT_CAPACITY */ transient Object[] elementData; /** * 列表大小，elementData中存储的元素个数 */ private int size; } 补充：\n通过上述继承关系我们发现一个很奇怪的现象，就是 ArrayList已经继承了AbstractList而 AbstractList类实现了List接口，那为什么 ArrayList还要在实现 List接口呢？同样在 HashMap中 LinkedList 中都是这种结构。\n据 Java 集合框架的创始人 Josh Bloch 描述，这样的写法是一个失误。在 Java 集合框架中，类似这样的写法很多，最开始写 Java 集合框架的时候，他认为这样写，在某些地方可能是有价值的，直到他意识到错了。显然，jdk 的维护者，后来不认为这个小小的失误值得去修改，所以就这样保留下来了。\ntransient ? ? ? 为 Java 关键字，为变量修饰符，如果用 transient 声明一个实例变量，当对象存储时，它的值不需要维持。\n首先介绍一下序列化Serializable\n通常一个类实现序列化方式是实现序列化接口： class XXX implements Serializable\n序列化的作用：把数据长久的保存在磁盘中，磁盘和内存是不同的，内存一般在程序运行时占用，数据保存周期短，随程序结束而结束，磁盘可以长久保存数据\ntransient关键字的作用，在已实现序列化的类中，有的变量不需要保存在磁盘中，就要transient关键字修饰，如银行卡密码等，就这个作用——在已序列化的类中使变量不序列化\n这里 Object[] elementData，就是我们的 ArrayList 容器，下面介绍的基本操作都是基于该 elementData 变量来进行操作的。\n接下来看一下ArrayList的两个常用构造方法：\njava\n//带初始容量参数的构造函数。（用户自己指定容量） public ArrayList(int initialCapacity) { if (initialCapacity  0) {//初始容量大于0  //创建initialCapacity大小的数组  this.elementData = new Object[initialCapacity]; } else if (initialCapacity == 0) {//初始容量等于0  //创建空数组  this.elementData = EMPTY_ELEMENTDATA; } else {//初始容量小于0，抛出异常  throw new IllegalArgumentException(\"Illegal Capacity: \"+ initialCapacity); } } //默认构造函数，构造一个空列表(无参数构造) public ArrayList() { this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA; } 在无参构造中来创建对象的时候,其实就是创建了一个空数组，集合长度为0,没有分配容量,当真正对数组进行添加元素操作时，才真正分配容量。即向数组中添加第一个元素时，数组容量扩为10。之后扩容会按照1.5倍增长。\n在有参构造中，传入的参数是正整数就按照传入的参数来确定创建数组的大小，否则异常。\n接下来重点，看扩容，扩容的方法就是 add(E e)\npublic boolean add(E e) { ensureCapacityInternal(size + 1); // list的size+1 \telementData[size++] = e; // 将数据放到数组最后一个 \treturn true; } 通过源码可以发现，其实add方法就两步，第一步：增加长度，第二步：添加元素到数组，第二步没什么说的，我们看看ensureCapacityInternal(int minCapacity)这个增加长度的方法。\n这个地方可以看到，如果在添加的时候数组是空的，就直接给一个默认10的长度，否则的话就加1\nif (minCapacity - elementData.length  0) grow(minCapacity); 通过上图这个判断才是真正的增加长度，当需要的长度大于原来数组长度的时候就需要扩容了，相反的则不需要扩容。\ngrow（）方法\njava\n//要分配的最大数组大小 private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8; private void grow(int minCapacity) { // oldCapacity为旧容量，newCapacity为新容量  int oldCapacity = elementData.length; //将oldCapacity 右移一位，其效果相当于oldCapacity /2(如果oldCapacity是奇数,先减1再除以2)  int newCapacity = oldCapacity + (oldCapacity  1); //然后检查新容量是否大于最小需要容量，若还是小于最小需要容量，那么就把最小需要容量当作数组的新容量  if (newCapacity - minCapacity  0) newCapacity = minCapacity; // 如果新容量大于 MAX_ARRAY_SIZE,进入(执行) `hugeCapacity()` 方法来比较 minCapacity 和 MAX_ARRAY_SIZE  if (newCapacity - MAX_ARRAY_SIZE  0) newCapacity = hugeCapacity(minCapacity); elementData = Arrays.copyOf(elementData, newCapacity); } 我们来仔细分析一下：\n 当我们要 add 第1个元素到 ArrayList 时，elementData.length 为0 （因为还是一个空的 list），因为执行了 ensureCapacityInternal() 方法 ，所以 minCapacity 此时为10。此时，minCapacity - elementData.length  0 成立，所以会进入 grow(minCapacity) 方法。 当add第2个元素时，minCapacity 为2，此时elementData.length(容量)在添加第一个元素后扩容成 10 了。此时，minCapacity - elementData.length  0 不成立，所以不会进入 （执行）grow(minCapacity) 方法。 添加第3、4···到第10个元素时，依然不会执行grow方法，数组容量都为10。  　直到添加第11个元素，minCapacity(为11)比elementData.length（为10）要大。进入grow方法进行扩容。\n​\t再次添加第23个元素，minCapacity(为23)比elementData.length（为10）要大。进入grow方法进行扩容。\n​\t……\n以上的一切都是ArrayList扩容的第一步，第二步就没啥说的了，就是把需要添加的元素添加到数组的最后一位。\n总结：在arraylist中增加一个对象的时候，Java会去检查arraylist，以确保已存在的数组中有足够的容量来存储这个新的对象。如果没有足够容量的话，那么就会新建一个长度更长的数组，旧的数组就会使用Arrays.copyOf()方法被复制到新的数组中去，现有的数组引用指向了新的数组。 小疑问 ? ? 为什么每次扩容处理会是 1.5 倍，而不是 2.5、3、4 倍呢？源代码定义1.5倍,是经过了大量的实验，发现 1.5 倍的扩容是最好的倍数。因为一次性扩容太大(例如 2.5 倍)可能会浪费更多的内存(1.5 倍最多浪费 33%，而 2.5 被最多会浪费 60%，3.5 倍则会浪费 71%……)。但是一次性扩容太小，需要多次对数组重新分配内存，对性能消耗比较严重。所以 1.5 倍刚刚好，既能满足性能需求，也不会造成很大的内存消耗。 5. 什么是线程不安全和线程安全？ ​\t线程安全就是多线程访问时，采用了加锁机制，当一个线程访问该类的某个数据时，进行保护，其他线程不能进行访问直到该线程读取完，其他线程才可使用。不会出现数据不一致或者数据污染。线程不安全就是不提供数据访问保护，有可能出现多个线程先后更改数据造成所得到的数据是脏数据。\n6. 为什么说ArrayList是线程不安全的？ 6.1 代码复现 java\nprivate static ListInteger list = new ArrayListInteger(); private static ExecutorService executorService = Executors.newFixedThreadPool(500); //定长线程池500  private static class IncreaseTask extends Thread{ @Override public void run() { System.out.println(\"ThreadId:\" + Thread.currentThread().getId() + \" start!\"); for(int i =0; i  100; i++){ list.add(i); } System.out.println(\"ThreadId:\" + Thread.currentThread().getId() + \" finished!\"); } } public static void main(String[] args){ //返回当前时间  long start = System.currentTimeMillis(); for(int i=0; i  500; i++){ //开启500个线程  executorService.submit(new IncreaseTask()); } //停止接收新任务，原来的任务继续执行  executorService.shutdown(); while (!executorService.isTerminated()){//所有提交的任务没完成  try { Thread.sleep(500*10); }catch (InterruptedException e){ e.printStackTrace(); } } System.out.println(\"list 长度为: \" + list.size()); long end = System.currentTimeMillis(); System.out.println(\"用时:\"+(double)(end-start)/1000+\"秒\"); } 打印结果应为：50000，实际测试部分结果如下：\nlist 长度为: 49927\nlist 长度为: 49901\n由此可见是ArrayList做add操作时候，会丢失一些数据，所以所ArrayList是线程不安全的。\n6.2 源码分析(JKD1.8) java\n// Object[] elementData:ArrayList的数据结构是数组类型，list存放的数据就是存放在elementData里面的 // 第1步 public boolean add(E e) { ensureCapacityInternal(size + 1); // list的size+1 \telementData[size++] = e; // 将数据放到数组最后一个 \treturn true; } // 第2步，判断如果将当前的新元素加到列表后面，列表的elementData数组的大小是否满足， // 如果size + 1的这个需求长度大于了elementData这个数组的长度，那么就要对这个数组进行扩容 private void ensureCapacityInternal(int minCapacity) { if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) { minCapacity = Math.max(DEFAULT_CAPACITY, minCapacity); } // 进入ensureExplicitCapacity方法 \tensureExplicitCapacity(minCapacity); } // 第3步，元素有变化，那么就调用grow方法 private void ensureExplicitCapacity(int minCapacity) { modCount++; // elementData：list的数组元素 \t// minCapacity: add操作后的容量 \tif (minCapacity - elementData.length  0) grow(minCapacity); } // 第4步 private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8; // 为什么要-8，是因为有些虚拟机有一些hear的key private void grow(int minCapacity) { // 原始list的容量（容量不是list.size） \tint oldCapacity = elementData.length; //现在list的容量，此时是做讲原始容量扩大0.5倍，oldCapacity  1：2进制右位移，就是除以2的意思 \tint newCapacity = oldCapacity + (oldCapacity  1); if (newCapacity - minCapacity  0) newCapacity = minCapacity; // 一般不会进入hugeCapacity这个方法， \tif (newCapacity - MAX_ARRAY_SIZE  0) newCapacity = hugeCapacity(minCapacity); // 复制elementData返回一个新的数组对象，这个时候list.add完成 \telementData = Arrays.copyOf(elementData, newCapacity); } 由此看到List集合做add（）时，第1步到第3步，都不会改变elementData对象，只有在第4步Arrays.copyOf的时候，返回一个新的数组对象。 因此：当有线程A、B同时进入grow方法，两个线程都会执行Arrays.copyOf()方法，返回2个不同的elementData对象， 假如，A先返回，B后返回，那么List.elementData == A.elementData， 然后B也返回后，这时List.elementData == B.elementData 这时，B.elementData就把A.elementData数据给覆盖了。导致A.elementData被丢失\n这样就出现了导致线程不安全的隐患，在多个线程进行add操作时可能会抛出并发读写异常和数据丢失，覆盖等问题。\n7. 如何避免ArrayList的并发问题? 1.使用Collections.synchronizedList()方法对ArrayList对象进行包装 ArrayListInteger arraylist = Collections.synchronizedList(new ArrayList()); 进行测试，结果正确，没有发现数据丢失问题。\n为什么synchronizedList（）方法可以解决并发问题？直接上源码(JKD1.8)\njava\npublic static T ListT synchronizedList(ListT list) { return (list instanceof RandomAccess ? new SynchronizedRandomAccessList(list) : new SynchronizedList(list)); } SynchronizedList(ListE list) { super(list); this.list = list; } SynchronizedList(ListE list, Object mutex) { super(list, mutex); this.list = list; } public boolean equals(Object o) { synchronized(mutex) {return list.equals(o);} } public int hashCode() { synchronized(mutex) {return list.hashCode();} } public E get(int index) { synchronized(mutex) {return list.get(index);} } public E set(int index, E element) { synchronized(mutex) {return list.set(index, element);} } public void add(int index, E element) { synchronized(mutex) {list.add(index, element);} } public E remove(int index) { synchronized(mutex) {return list.remove(index);} } public int indexOf(Object o) { synchronized(mutex) {return list.indexOf(o);} } public int lastIndexOf(Object o) { synchronized(mutex) {return list.lastIndexOf(o);} } public boolean addAll(int index, Collection extends E c) { synchronized(mutex) {return list.addAll(index, c);} } public ListIteratorE listIterator() { return list.listIterator(); // Must be manually synched by user  } public ListIteratorE listIterator(int index) { return list.listIterator(index); // Must be manually synched by user  } public ListE subList(int fromIndex, int toIndex) { synchronized(mutex) { return new SynchronizedListE(list.subList(fromIndex, toIndex), mutex); } } 关于mutex的定义：\nfinal CollectionE c; // Backing Collection final Object mutex; // Object on which to synchronize  SynchronizedCollection(CollectionE c) { if (c==null) throw new NullPointerException(); this.c = c; mutex = this; } SynchronizedCollection(CollectionE c, Object mutex) { this.c = c; this.mutex = mutex; } 从源码中我们可以看到SynchronizedList是通过对mutex做同步来控制线程安全的，而mutex定义在其父类SynchronizedCollection中。mutex指向的就是当前对象自己，所以SynchronizedList是线程安全的根本原因是使用Synchronized对SynchronizedList的add,delete等操作进行加锁，但是这种锁的力度很大，效率比较低。\n2.使用并发容器CopyOnWriteArrayList CopyOnWriteArrayListlist = new CopyOnWriteArrayList(); 源码(JKD1.8)：\nprivate static final long serialVersionUID = 8673264195747942595L; transient final ReentrantLock lock = new ReentrantLock(); private volatile transient Object[] array; final Object[] getArray() { return array; } final void setArray(Object[] a) { array = a; } public boolean add(E e) { final ReentrantLock lock = this.lock; lock.lock(); try { Object[] elements = getArray(); int len = elements.length; Object[] newElements = Arrays.copyOf(elements, len + 1); newElements[len] = e; setArray(newElements); return true; } finally { lock.unlock(); } } 从add方法知道：CopyOnWriteArrayList底层数组的扩容方式是一个一个地增加，而且每次把原来的元素通过Arrays.copy()方法copy到新数组中，然后在尾部加上新元素e.它的底层并发安全的保证是通过ReentrantLock进行保证的，CopyOnWriteArrayList和SynchronizedList的底层实现方式是不一样的，前者是通过Lock机制进行加锁，而后者是通过Synchronized进行加锁。\n","wordCount":"925","inLanguage":"en","datePublished":"2021-12-31T00:06:54+08:00","dateModified":"2021-12-31T00:06:54+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.wilds.top/posts/ad0a121e/"},"publisher":{"@type":"Organization","name":"Earlのblog","logo":{"@type":"ImageObject","url":"https://www.wilds.top/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://www.wilds.top/ accesskey=h title="Earlのblog (Alt + H)">Earlのblog</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://www.wilds.top/search title>
+<span><i class="fa fa-search"></i></span>
+</a>
+</li>
+<li>
+<a href=https://www.wilds.top/archives/ title=Archive>
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href=https://www.wilds.top/categories title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://www.wilds.top/tags title=Tags>
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href=https://www.wilds.top/friends/ title=Friends>
+<span>Friends</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://www.wilds.top/>Home</a>&nbsp;»&nbsp;<a href=https://www.wilds.top/posts/>Posts</a></div>
+<h1 class=post-title>
+ArrayList经典面试题
+</h1>
+<div class=post-description>
+ArrayList源码分析
+</div>
+<div class=post-meta><span title="2021-12-31 00:06:54 +0800 CST">December 31, 2021</span>&nbsp;·&nbsp;5 min
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#-arraylist%e9%9b%86%e5%90%88- aria-label="【 ArrayList集合 】">【 ArrayList集合 】</a></li>
+<li>
+<a href=#%e5%85%b3%e4%ba%8e%e9%9b%86%e5%90%88%e7%9a%84%e5%b8%b8%e8%a7%81%e9%9d%a2%e8%af%95%e9%a2%98%e5%8f%8a%e6%ba%90%e7%a0%81%e5%88%86%e6%9e%90 aria-label=关于集合的常见面试题及源码分析>关于集合的常见面试题及源码分析</a><ul>
+<li>
+<a href=#1-%e4%bb%80%e4%b9%88%e6%98%af%e9%9b%86%e5%90%88 aria-label="1. 什么是集合?">1. 什么是集合?</a></li>
+<li>
+<a href=#2-%e9%9b%86%e5%90%88%e7%b1%bb%e4%b9%8b%e9%97%b4%e7%9a%84%e7%bb%a7%e6%89%bf%e5%85%b3%e7%b3%bb aria-label="2. 集合类之间的继承关系?">2. 集合类之间的继承关系?</a></li>
+<li>
+<a href=#3-%e9%9b%86%e5%90%88%e5%92%8c%e6%95%b0%e7%bb%84%e7%9a%84%e5%8c%ba%e5%88%ab aria-label="3. 集合和数组的区别?">3. 集合和数组的区别?</a></li>
+<li>
+<a href=#4-arraylist%e6%89%a9%e5%ae%b9%e5%8e%9f%e7%90%86 aria-label="4. ArrayList扩容原理？">4. ArrayList扩容原理？</a><ul>
+<ul>
+<ul>
+<li>
+<a href=#41%e6%ad%a5%e9%aa%a4 aria-label=4.1.步骤>4.1.步骤</a></li>
+<li>
+<a href=#42%e6%ba%90%e7%a0%81jkd18 aria-label=4.2.源码(JKD1.8)>4.2.源码(JKD1.8)</a></li></ul>
+</ul>
+</ul>
+</li>
+<li>
+<a href=#5-%e4%bb%80%e4%b9%88%e6%98%af%e7%ba%bf%e7%a8%8b%e4%b8%8d%e5%ae%89%e5%85%a8%e5%92%8c%e7%ba%bf%e7%a8%8b%e5%ae%89%e5%85%a8 aria-label="5. 什么是线程不安全和线程安全？">5. 什么是线程不安全和线程安全？</a></li>
+<li>
+<a href=#6-%e4%b8%ba%e4%bb%80%e4%b9%88%e8%af%b4arraylist%e6%98%af%e7%ba%bf%e7%a8%8b%e4%b8%8d%e5%ae%89%e5%85%a8%e7%9a%84 aria-label="6. 为什么说ArrayList是线程不安全的？">6. 为什么说ArrayList是线程不安全的？</a><ul>
+<ul>
+<li>
+<a href=#61--%e4%bb%a3%e7%a0%81%e5%a4%8d%e7%8e%b0 aria-label="6.1  代码复现">6.1 代码复现</a></li>
+<li>
+<a href=#62--%e6%ba%90%e7%a0%81%e5%88%86%e6%9e%90jkd18 aria-label="6.2  源码分析(JKD1.8)">6.2 源码分析(JKD1.8)</a></li></ul>
+</ul>
+</li>
+<li>
+<a href=#7--%e5%a6%82%e4%bd%95%e9%81%bf%e5%85%8darraylist%e7%9a%84%e5%b9%b6%e5%8f%91%e9%97%ae%e9%a2%98 aria-label="7.  如何避免ArrayList的并发问题?">7. 如何避免ArrayList的并发问题?</a><ul>
+<ul>
+<ul>
+<li>
+<a href=#1%e4%bd%bf%e7%94%a8collectionssynchronizedlist%e6%96%b9%e6%b3%95%e5%af%b9arraylist%e5%af%b9%e8%b1%a1%e8%bf%9b%e8%a1%8c%e5%8c%85%e8%a3%85 aria-label=1.使用Collections.synchronizedList()方法对ArrayList对象进行包装>1.使用Collections.synchronizedList()方法对ArrayList对象进行包装</a></li>
+<li>
+<a href=#2%e4%bd%bf%e7%94%a8%e5%b9%b6%e5%8f%91%e5%ae%b9%e5%99%a8copyonwritearraylist aria-label=2.使用并发容器CopyOnWriteArrayList>2.使用并发容器CopyOnWriteArrayList</a>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=-arraylist集合->【 ArrayList集合 】<a hidden class=anchor aria-hidden=true href=#-arraylist集合->#</a></h2>
+<h2 id=关于集合的常见面试题及源码分析>关于集合的常见面试题及源码分析<a hidden class=anchor aria-hidden=true href=#关于集合的常见面试题及源码分析>#</a></h2>
+<h3 id=1-什么是集合>1. 什么是集合?<a hidden class=anchor aria-hidden=true href=#1-什么是集合>#</a></h3>
+<ul>
+<li><strong>集合</strong>：集合是java中提供的一种容器，可以把多个对象（实际上是对象的引用，但习惯上都称对象）“丢进”该容器中。大致可以分为Set、List、Queue和Map四种体系，其中Set代表无序、不可重复的集合；List代表有序、可重复的集合；而Map则代表具有映射关系的集合，Java 5 又增加了Queue体系集合，代表一种队列集合实现。</li>
+</ul>
+<h3 id=2-集合类之间的继承关系>2. 集合类之间的继承关系?<a hidden class=anchor aria-hidden=true href=#2-集合类之间的继承关系>#</a></h3>
+<p>集合类主要由两个接口派生而出，分别是单列集合Collection和双列集合Map，它们是Java集合框架的根接口。</p>
+<ul>
+<li><strong>Collection</strong>：单列集合类的根接口，用于存储一系列符合某种规则的元素，它有两个重要的子接口，分别是<code>List</code>和<code>Set</code>。其中，<code>List</code>的特点是元素有序、元素可重复。<code>Set</code>的特点是元素无序，而且不可重复。<code>List</code>接口的主要实现类有<code>ArrayList</code>和<code>LinkedList</code>，<code>Set</code>接口的主要实现类有<code>HashSet</code>和<code>TreeSet</code>。</li>
+</ul>
+<p>从上面的描述可以看出JDK中提供了丰富的集合类库，为了便于系统地学习，接下来通过一张图来描述集合类的继承体系。</p>
+<p><img loading=lazy src=https://gitee.com/earl9/img/raw/master/img/2021/12/311231000314.webp alt>
+</p>
+<p>图中，ArrayList,HashSet,LinkedList,TreeSet是我们经常会有用到的已实现的集合类。</p>
+<p>Map实现类用于保存具有映射关系的数据。Map保存的每项数据都是key-value对，也就是由key和value两个值组成。Map里的key是不可重复的。</p>
+<p><img loading=lazy src=https://gitee.com/earl9/img/raw/master/img/2021/12/311231000038.jpeg alt=Map>
+</p>
+<p>图中，HashMap，TreeMap是我们经常会用到的集合类。</p>
+<h3 id=3-集合和数组的区别>3. 集合和数组的区别?<a hidden class=anchor aria-hidden=true href=#3-集合和数组的区别>#</a></h3>
+<p>​ 1:长度区别
+​ 数组固定
+​ 集合可变
+​ 2:内容区别
+​ 数组可以是基本类型，也可以是引用类型
+​ 集合只能是引用类型
+​ 3:类型区别
+​ 数组只能存储同一种类型
+​ 集合可以存储不同类型</p>
+<p><strong>如果存储的数据长度经常发生改变，推荐使用集合</strong></p>
+<h3 id=4-arraylist扩容原理>4. ArrayList扩容原理？<a hidden class=anchor aria-hidden=true href=#4-arraylist扩容原理>#</a></h3>
+<h6 id=41步骤>4.1.步骤<a hidden class=anchor aria-hidden=true href=#41步骤>#</a></h6>
+<p>​ 1、扩容</p>
+<p>​ 把原来的数组复制到另一个内存空间更大的数组中</p>
+<p>​ 2、添加元素</p>
+<p>​ 把新元素添加到扩容以后的数组中</p>
+<h6 id=42源码jkd18>4.2.源码(JKD1.8)<a hidden class=anchor aria-hidden=true href=#42源码jkd18>#</a></h6>
+<p>先把ArrayList中定义的一些属性粘出来方便下面源码分析</p>
+<p><code>java</code></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ArrayList</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;</span> <span class=kd>extends</span> <span class=n>AbstractList</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;</span>
+        <span class=kd>implements</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;,</span> <span class=n>RandomAccess</span><span class=o>,</span> <span class=n>Cloneable</span><span class=o>,</span> <span class=n>java</span><span class=o>.</span><span class=na>io</span><span class=o>.</span><span class=na>Serializable</span>
+<span class=o>{</span>
+    <span class=cm>/**
+</span><span class=cm>     * 默认初始容量
+</span><span class=cm>     */</span>
+    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=kt>int</span> <span class=n>DEFAULT_CAPACITY</span> <span class=o>=</span> <span class=n>10</span><span class=o>;</span>
+
+    <span class=cm>/**
+</span><span class=cm>     * 空数组实例
+</span><span class=cm>     */</span>
+    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=n>Object</span><span class=o>[]</span> <span class=n>EMPTY_ELEMENTDATA</span> <span class=o>=</span> <span class=o>{};</span>
+
+    <span class=cm>/**
+</span><span class=cm>     *空数组实例，用于默认大小的空实例
+</span><span class=cm>     */</span>
+    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=n>Object</span><span class=o>[]</span> <span class=n>DEFAULTCAPACITY_EMPTY_ELEMENTDATA</span> <span class=o>=</span> <span class=o>{};</span>
+    <span class=cm>/**
+</span><span class=cm>	 *如果新建ArrayList对象时没有指定大小，那么会将
+</span><span class=cm>	 *DEFAULTCAPACITY_EMPTY_ELEMENTDATA赋值给elementData，
+</span><span class=cm>	 *并在第一次添加元素时，将列表容量设置为DEFAULT_CAPACITY
+</span><span class=cm>     */</span>
+    <span class=kd>transient</span> <span class=n>Object</span><span class=o>[]</span> <span class=n>elementData</span><span class=o>;</span>
+    
+    <span class=cm>/**
+</span><span class=cm>     * 列表大小，elementData中存储的元素个数
+</span><span class=cm>     */</span>
+    <span class=kd>private</span> <span class=kt>int</span> <span class=n>size</span><span class=o>;</span>
+<span class=o>}</span>
+</code></pre></div><p><strong>补充</strong>：</p>
+<p>通过上述继承关系我们发现一个很奇怪的现象，就是 ArrayList已经继承了AbstractList而 AbstractList类实现了List接口，那为什么 ArrayList还要在实现 List接口呢？同样在 HashMap中 LinkedList 中都是这种结构。</p>
+<p>据 Java 集合框架的创始人 Josh Bloch 描述，这样的写法是一个失误。在 Java 集合框架中，类似这样的写法很多，最开始写 Java 集合框架的时候，他认为这样写，在某些地方可能是有价值的，直到他意识到错了。显然，jdk 的维护者，后来不认为这个小小的失误值得去修改，所以就这样保留下来了。</p>
+<p><strong>transient</strong> ? ? ? 为 Java 关键字，为变量修饰符，如果用 transient 声明一个实例变量，当对象存储时，它的值不需要维持。</p>
+<p>首先介绍一下序列化<strong>Serializable</strong></p>
+<p>通常一个类实现序列化方式是实现序列化接口： class XXX implements Serializable</p>
+<p>序列化的作用：把数据长久的保存在磁盘中，磁盘和内存是不同的，内存一般在程序运行时占用，数据保存周期短，随程序结束而结束，磁盘可以长久保存数据</p>
+<p>transient关键字的作用，在已实现序列化的类中，有的变量不需要保存在磁盘中，就要transient关键字修饰，如银行卡密码等，就这个作用&mdash;&mdash;在已序列化的类中使变量不序列化</p>
+<p>这里 Object[] elementData，就是我们的 ArrayList 容器，下面介绍的基本操作都是基于该 elementData 变量来进行操作的。</p>
+<p>接下来看一下ArrayList的两个常用构造方法：</p>
+<p><code>java</code></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=c1>//带初始容量参数的构造函数。（用户自己指定容量）
+</span><span class=c1></span><span class=kd>public</span> <span class=nf>ArrayList</span><span class=o>(</span><span class=kt>int</span> <span class=n>initialCapacity</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>if</span> <span class=o>(</span><span class=n>initialCapacity</span> <span class=o>&gt;</span> <span class=n>0</span><span class=o>)</span> <span class=o>{</span><span class=c1>//初始容量大于0
+</span><span class=c1></span>    
+        <span class=c1>//创建initialCapacity大小的数组
+</span><span class=c1></span>        <span class=k>this</span><span class=o>.</span><span class=na>elementData</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Object</span><span class=o>[</span><span class=n>initialCapacity</span><span class=o>];</span>
+        
+    <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>initialCapacity</span> <span class=o>==</span> <span class=n>0</span><span class=o>)</span> <span class=o>{</span><span class=c1>//初始容量等于0
+</span><span class=c1></span>    
+        <span class=c1>//创建空数组
+</span><span class=c1></span>        <span class=k>this</span><span class=o>.</span><span class=na>elementData</span> <span class=o>=</span> <span class=n>EMPTY_ELEMENTDATA</span><span class=o>;</span>
+        
+    <span class=o>}</span> <span class=k>else</span> <span class=o>{</span><span class=c1>//初始容量小于0，抛出异常
+</span><span class=c1></span>    
+        <span class=k>throw</span> <span class=k>new</span> <span class=n>IllegalArgumentException</span><span class=o>(</span><span class=s>&#34;Illegal Capacity: &#34;</span><span class=o>+</span>
+                                           <span class=n>initialCapacity</span><span class=o>);</span>
+    <span class=o>}</span>
+<span class=o>}</span>
+
+<span class=c1>//默认构造函数，构造一个空列表(无参数构造)
+</span><span class=c1></span><span class=kd>public</span> <span class=nf>ArrayList</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>this</span><span class=o>.</span><span class=na>elementData</span> <span class=o>=</span> <span class=n>DEFAULTCAPACITY_EMPTY_ELEMENTDATA</span><span class=o>;</span>
+<span class=o>}</span>
+</code></pre></div><p>在无参构造中来创建对象的时候,其实就是创建了一个空数组，集合长度为0,没有分配容量,当真正对数组进行添加元素操作时，才真正分配容量。即向数组中添加第一个元素时，数组容量扩为10。之后扩容会按照1.5倍增长。</p>
+<p>在有参构造中，传入的参数是正整数就按照传入的参数来确定创建数组的大小，否则异常。</p>
+<p>接下来<strong>重点</strong>，看<strong>扩容</strong>，扩容的方法就是 <strong>add(E e)</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>add</span><span class=o>(</span><span class=n>E</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+	<span class=n>ensureCapacityInternal</span><span class=o>(</span><span class=n>size</span> <span class=o>+</span> <span class=n>1</span><span class=o>);</span>  <span class=c1>// list的size+1
+</span><span class=c1></span>	<span class=n>elementData</span><span class=o>[</span><span class=n>size</span><span class=o>++]</span> <span class=o>=</span> <span class=n>e</span><span class=o>;</span> <span class=c1>// 将数据放到数组最后一个
+</span><span class=c1></span>	<span class=k>return</span> <span class=kc>true</span><span class=o>;</span>
+<span class=o>}</span>
+</code></pre></div><p>通过源码可以发现，其实add方法就两步，第一步：增加长度，第二步：添加元素到数组，第二步没什么说的，我们看看ensureCapacityInternal(int minCapacity)这个增加长度的方法。</p>
+<p><img loading=lazy src=https://gitee.com/earl9/img/raw/master/img/2021/12/311231000049.jpeg alt=扩容源码>
+</p>
+<p>这个地方可以看到，如果在添加的时候数组是空的，就直接给一个默认10的长度，否则的话就加1</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java> <span class=k>if</span> <span class=o>(</span><span class=n>minCapacity</span> <span class=o>-</span> <span class=n>elementData</span><span class=o>.</span><span class=na>length</span> <span class=o>&gt;</span> <span class=n>0</span><span class=o>)</span>
+            <span class=n>grow</span><span class=o>(</span><span class=n>minCapacity</span><span class=o>);</span>
+</code></pre></div><p>通过上图这个判断才是真正的增加长度，当需要的长度大于原来数组长度的时候就需要扩容了，相反的则不需要扩容。</p>
+<p><strong>grow（）方法</strong></p>
+<p><code>java</code></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=c1>//要分配的最大数组大小
+</span><span class=c1></span><span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=kt>int</span> <span class=n>MAX_ARRAY_SIZE</span> <span class=o>=</span> <span class=n>Integer</span><span class=o>.</span><span class=na>MAX_VALUE</span> <span class=o>-</span> <span class=n>8</span><span class=o>;</span>
+
+<span class=kd>private</span> <span class=kt>void</span> <span class=nf>grow</span><span class=o>(</span><span class=kt>int</span> <span class=n>minCapacity</span><span class=o>)</span> <span class=o>{</span>
+    <span class=c1>// oldCapacity为旧容量，newCapacity为新容量
+</span><span class=c1></span>    <span class=kt>int</span> <span class=n>oldCapacity</span> <span class=o>=</span> <span class=n>elementData</span><span class=o>.</span><span class=na>length</span><span class=o>;</span>
+    
+    <span class=c1>//将oldCapacity 右移一位，其效果相当于oldCapacity /2(如果oldCapacity是奇数,先减1再除以2)
+</span><span class=c1></span>    <span class=kt>int</span> <span class=n>newCapacity</span> <span class=o>=</span> <span class=n>oldCapacity</span> <span class=o>+</span> <span class=o>(</span><span class=n>oldCapacity</span> <span class=o>&gt;&gt;</span> <span class=n>1</span><span class=o>);</span>
+    
+    <span class=c1>//然后检查新容量是否大于最小需要容量，若还是小于最小需要容量，那么就把最小需要容量当作数组的新容量
+</span><span class=c1></span>    <span class=k>if</span> <span class=o>(</span><span class=n>newCapacity</span> <span class=o>-</span> <span class=n>minCapacity</span> <span class=o>&lt;</span> <span class=n>0</span><span class=o>)</span>
+        <span class=n>newCapacity</span> <span class=o>=</span> <span class=n>minCapacity</span><span class=o>;</span>
+        
+    <span class=c1>// 如果新容量大于 MAX_ARRAY_SIZE,进入(执行) `hugeCapacity()` 方法来比较 minCapacity 和 MAX_ARRAY_SIZE
+</span><span class=c1></span>    <span class=k>if</span> <span class=o>(</span><span class=n>newCapacity</span> <span class=o>-</span> <span class=n>MAX_ARRAY_SIZE</span> <span class=o>&gt;</span> <span class=n>0</span><span class=o>)</span>
+        <span class=n>newCapacity</span> <span class=o>=</span> <span class=n>hugeCapacity</span><span class=o>(</span><span class=n>minCapacity</span><span class=o>);</span>
+   
+    <span class=n>elementData</span> <span class=o>=</span> <span class=n>Arrays</span><span class=o>.</span><span class=na>copyOf</span><span class=o>(</span><span class=n>elementData</span><span class=o>,</span> <span class=n>newCapacity</span><span class=o>);</span>
+<span class=o>}</span>
+</code></pre></div><p><strong>我们来仔细分析一下：</strong></p>
+<ul>
+<li><strong>当我们要 add 第1个元素到 ArrayList 时，elementData.length 为0 （因为还是一个空的 list），因为执行了 ensureCapacityInternal() 方法 ，所以 minCapacity 此时为10。此时，minCapacity - elementData.length > 0 成立，所以会进入 grow(minCapacity) 方法。</strong></li>
+<li><strong>当add第2个元素时，minCapacity 为2，此时elementData.length(容量)在添加第一个元素后扩容成 10 了。此时，minCapacity - elementData.length > 0 不成立，所以不会进入 （执行）grow(minCapacity) 方法。</strong></li>
+<li><strong>添加第3、4···到第10个元素时，依然不会执行grow方法，数组容量都为10。</strong></li>
+</ul>
+<p>　　<strong>直到添加第11个元素，minCapacity(为11)比elementData.length（为10）要大。进入grow方法进行扩容。</strong></p>
+<p>​ <strong>再次添加第23个元素，minCapacity(为23)比elementData.length（为10）要大。进入grow方法进行扩容。</strong></p>
+<p>​ <strong>&mldr;&mldr;</strong></p>
+<p><strong>以上的一切都是ArrayList扩容的第一步，第二步就没啥说的了，就是把需要添加的元素添加到数组的最后一位。</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=n>总结</span><span class=err>：</span><span class=n>在arraylist中增加一个对象的时候</span><span class=err>，</span><span class=n>Java会去检查arraylist</span><span class=err>，</span><span class=n>以确保已存在的数组中有足够的容量来存储这个新的对象</span><span class=err>。</span><span class=n>如果没有足够容量的话</span><span class=err>，</span><span class=n>那么就会新建一个长度更长的数组</span><span class=err>，</span><span class=n>旧的数组就会使用Arrays</span><span class=o>.</span><span class=na>copyOf</span><span class=o>()</span><span class=n>方法被复制到新的数组中去</span><span class=err>，</span><span class=n>现有的数组引用指向了新的数组</span><span class=err>。</span>
+
+<span class=n>小疑问</span> <span class=o>?</span> <span class=o>?</span> <span class=n>为什么每次扩容处理会是</span> <span class=n>1</span><span class=o>.</span><span class=na>5</span> <span class=n>倍</span><span class=err>，</span><span class=n>而不是</span> <span class=n>2</span><span class=o>.</span><span class=na>5</span><span class=err>、</span><span class=n>3</span><span class=err>、</span><span class=n>4</span> <span class=n>倍呢</span><span class=err>？</span><span class=n>源代码定义1</span><span class=o>.</span><span class=na>5倍</span><span class=o>,</span><span class=n>是经过了大量的实验</span><span class=err>，</span><span class=n>发现</span> <span class=n>1</span><span class=o>.</span><span class=na>5</span> <span class=n>倍的扩容是最好的倍数</span><span class=err>。</span><span class=n>因为一次性扩容太大</span><span class=o>(</span><span class=n>例如</span> <span class=n>2</span><span class=o>.</span><span class=na>5</span> <span class=n>倍</span><span class=o>)</span><span class=n>可能会浪费更多的内存</span><span class=o>(</span><span class=n>1</span><span class=o>.</span><span class=na>5</span> <span class=n>倍最多浪费</span> <span class=n>33</span><span class=o>%</span><span class=err>，</span><span class=n>而</span> <span class=n>2</span><span class=o>.</span><span class=na>5</span> <span class=n>被最多会浪费</span> <span class=n>60</span><span class=o>%</span><span class=err>，</span><span class=n>3</span><span class=o>.</span><span class=na>5</span> <span class=n>倍则会浪费</span> <span class=n>71</span><span class=o>%</span><span class=err>……</span><span class=o>)</span><span class=err>。</span><span class=n>但是一次性扩容太小</span><span class=err>，</span><span class=n>需要多次对数组重新分配内存</span><span class=err>，</span><span class=n>对性能消耗比较严重</span><span class=err>。</span><span class=n>所以</span> <span class=n>1</span><span class=o>.</span><span class=na>5</span> <span class=n>倍刚刚好</span><span class=err>，</span><span class=n>既能满足性能需求</span><span class=err>，</span><span class=n>也不会造成很大的内存消耗</span><span class=err>。</span>
+</code></pre></div><h3 id=5-什么是线程不安全和线程安全>5. 什么是线程不安全和线程安全？<a hidden class=anchor aria-hidden=true href=#5-什么是线程不安全和线程安全>#</a></h3>
+<p>​ 线程安全就是多线程访问时，采用了加锁机制，当一个线程访问该类的某个数据时，进行保护，其他线程不能进行访问直到该线程读取完，其他线程才可使用。不会出现数据不一致或者数据污染。线程不安全就是不提供数据访问保护，有可能出现多个线程先后更改数据造成所得到的数据是脏数据。</p>
+<h3 id=6-为什么说arraylist是线程不安全的>6. 为什么说ArrayList是线程不安全的？<a hidden class=anchor aria-hidden=true href=#6-为什么说arraylist是线程不安全的>#</a></h3>
+<h5 id=61--代码复现>6.1 代码复现<a hidden class=anchor aria-hidden=true href=#61--代码复现>#</a></h5>
+<p><code>java</code></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java>	<span class=kd>private</span> <span class=kd>static</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>Integer</span><span class=o>&gt;</span> <span class=n>list</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Integer</span><span class=o>&gt;();</span>
+    <span class=kd>private</span> <span class=kd>static</span> <span class=n>ExecutorService</span> <span class=n>executorService</span> <span class=o>=</span> <span class=n>Executors</span><span class=o>.</span><span class=na>newFixedThreadPool</span><span class=o>(</span><span class=n>500</span><span class=o>);</span> <span class=c1>//定长线程池500
+</span><span class=c1></span>
+    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>class</span> <span class=nc>IncreaseTask</span> <span class=kd>extends</span> <span class=n>Thread</span><span class=o>{</span>
+        <span class=nd>@Override</span>
+        <span class=kd>public</span> <span class=kt>void</span> <span class=nf>run</span><span class=o>()</span> <span class=o>{</span>
+            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;ThreadId:&#34;</span> <span class=o>+</span> <span class=n>Thread</span><span class=o>.</span><span class=na>currentThread</span><span class=o>().</span><span class=na>getId</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34; start!&#34;</span><span class=o>);</span>
+            <span class=k>for</span><span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span><span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>100</span><span class=o>;</span> <span class=n>i</span><span class=o>++){</span>
+                <span class=n>list</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>i</span><span class=o>);</span>
+            <span class=o>}</span>
+            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;ThreadId:&#34;</span> <span class=o>+</span> <span class=n>Thread</span><span class=o>.</span><span class=na>currentThread</span><span class=o>().</span><span class=na>getId</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34; finished!&#34;</span><span class=o>);</span>
+        <span class=o>}</span>
+    <span class=o>}</span>
+
+    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>){</span>
+        <span class=c1>//返回当前时间
+</span><span class=c1></span>        <span class=kt>long</span> <span class=n>start</span> <span class=o>=</span> <span class=n>System</span><span class=o>.</span><span class=na>currentTimeMillis</span><span class=o>();</span>
+
+        <span class=k>for</span><span class=o>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=n>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>500</span><span class=o>;</span> <span class=n>i</span><span class=o>++){</span> <span class=c1>//开启500个线程
+</span><span class=c1></span>            <span class=n>executorService</span><span class=o>.</span><span class=na>submit</span><span class=o>(</span><span class=k>new</span> <span class=n>IncreaseTask</span><span class=o>());</span>
+        <span class=o>}</span>
+        <span class=c1>//停止接收新任务，原来的任务继续执行
+</span><span class=c1></span>        <span class=n>executorService</span><span class=o>.</span><span class=na>shutdown</span><span class=o>();</span>
+
+        <span class=k>while</span> <span class=o>(!</span><span class=n>executorService</span><span class=o>.</span><span class=na>isTerminated</span><span class=o>()){</span><span class=c1>//所有提交的任务没完成
+</span><span class=c1></span>            <span class=k>try</span> <span class=o>{</span>
+                <span class=n>Thread</span><span class=o>.</span><span class=na>sleep</span><span class=o>(</span><span class=n>500</span><span class=o>*</span><span class=n>10</span><span class=o>);</span>
+            <span class=o>}</span><span class=k>catch</span> <span class=o>(</span><span class=n>InterruptedException</span> <span class=n>e</span><span class=o>){</span>
+                <span class=n>e</span><span class=o>.</span><span class=na>printStackTrace</span><span class=o>();</span>
+            <span class=o>}</span>
+        <span class=o>}</span>
+        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;list 长度为: &#34;</span> <span class=o>+</span> <span class=n>list</span><span class=o>.</span><span class=na>size</span><span class=o>());</span>
+        <span class=kt>long</span> <span class=n>end</span> <span class=o>=</span> <span class=n>System</span><span class=o>.</span><span class=na>currentTimeMillis</span><span class=o>();</span>
+        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;用时:&#34;</span><span class=o>+(</span><span class=kt>double</span><span class=o>)(</span><span class=n>end</span><span class=o>-</span><span class=n>start</span><span class=o>)/</span><span class=n>1000</span><span class=o>+</span><span class=s>&#34;秒&#34;</span><span class=o>);</span>
+    <span class=o>}</span>
+
+
+</code></pre></div><p>打印结果应为：50000，实际测试部分结果如下：</p>
+<p>list 长度为: 49927</p>
+<p>list 长度为: 49901</p>
+<p>由此可见是ArrayList做add操作时候，会丢失一些数据，所以所ArrayList是线程不安全的。</p>
+<h5 id=62--源码分析jkd18>6.2 源码分析(JKD1.8)<a hidden class=anchor aria-hidden=true href=#62--源码分析jkd18>#</a></h5>
+<p><code>java</code></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=c1>// Object[] elementData:ArrayList的数据结构是数组类型，list存放的数据就是存放在elementData里面的
+</span><span class=c1>// 第1步
+</span><span class=c1></span><span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>add</span><span class=o>(</span><span class=n>E</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+	<span class=n>ensureCapacityInternal</span><span class=o>(</span><span class=n>size</span> <span class=o>+</span> <span class=n>1</span><span class=o>);</span>  <span class=c1>// list的size+1
+</span><span class=c1></span>	<span class=n>elementData</span><span class=o>[</span><span class=n>size</span><span class=o>++]</span> <span class=o>=</span> <span class=n>e</span><span class=o>;</span> <span class=c1>// 将数据放到数组最后一个
+</span><span class=c1></span>	<span class=k>return</span> <span class=kc>true</span><span class=o>;</span>
+<span class=o>}</span>
+ 
+ 
+<span class=c1>// 第2步，判断如果将当前的新元素加到列表后面，列表的elementData数组的大小是否满足，
+</span><span class=c1>// 如果size + 1的这个需求长度大于了elementData这个数组的长度，那么就要对这个数组进行扩容
+</span><span class=c1></span><span class=kd>private</span> <span class=kt>void</span> <span class=nf>ensureCapacityInternal</span><span class=o>(</span><span class=kt>int</span> <span class=n>minCapacity</span><span class=o>)</span> <span class=o>{</span>
+	<span class=k>if</span> <span class=o>(</span><span class=n>elementData</span> <span class=o>==</span> <span class=n>DEFAULTCAPACITY_EMPTY_ELEMENTDATA</span><span class=o>)</span> <span class=o>{</span>
+		<span class=n>minCapacity</span> <span class=o>=</span> <span class=n>Math</span><span class=o>.</span><span class=na>max</span><span class=o>(</span><span class=n>DEFAULT_CAPACITY</span><span class=o>,</span> <span class=n>minCapacity</span><span class=o>);</span>
+	<span class=o>}</span>
+ 
+	<span class=c1>// 进入ensureExplicitCapacity方法
+</span><span class=c1></span>	<span class=n>ensureExplicitCapacity</span><span class=o>(</span><span class=n>minCapacity</span><span class=o>);</span>
+<span class=o>}</span>
+ 
+ 
+<span class=c1>// 第3步，元素有变化，那么就调用grow方法
+</span><span class=c1></span><span class=kd>private</span> <span class=kt>void</span> <span class=nf>ensureExplicitCapacity</span><span class=o>(</span><span class=kt>int</span> <span class=n>minCapacity</span><span class=o>)</span> <span class=o>{</span>
+	<span class=n>modCount</span><span class=o>++;</span>
+	<span class=c1>// elementData：list的数组元素
+</span><span class=c1></span>	<span class=c1>// minCapacity: add操作后的容量
+</span><span class=c1></span>	<span class=k>if</span> <span class=o>(</span><span class=n>minCapacity</span> <span class=o>-</span> <span class=n>elementData</span><span class=o>.</span><span class=na>length</span> <span class=o>&gt;</span> <span class=n>0</span><span class=o>)</span> 
+		<span class=n>grow</span><span class=o>(</span><span class=n>minCapacity</span><span class=o>);</span>
+<span class=o>}</span>
+ 
+ 
+<span class=c1>// 第4步
+</span><span class=c1></span><span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=kt>int</span> <span class=n>MAX_ARRAY_SIZE</span> <span class=o>=</span> <span class=n>Integer</span><span class=o>.</span><span class=na>MAX_VALUE</span> <span class=o>-</span> <span class=n>8</span><span class=o>;</span> <span class=c1>// 为什么要-8，是因为有些虚拟机有一些hear的key
+</span><span class=c1></span><span class=kd>private</span> <span class=kt>void</span> <span class=nf>grow</span><span class=o>(</span><span class=kt>int</span> <span class=n>minCapacity</span><span class=o>)</span> <span class=o>{</span>
+ 
+	<span class=c1>// 原始list的容量（容量不是list.size）
+</span><span class=c1></span>	<span class=kt>int</span> <span class=n>oldCapacity</span> <span class=o>=</span> <span class=n>elementData</span><span class=o>.</span><span class=na>length</span><span class=o>;</span> 
+	
+	<span class=c1>//现在list的容量，此时是做讲原始容量扩大0.5倍，oldCapacity &gt;&gt; 1：2进制右位移，就是除以2的意思
+</span><span class=c1></span>	<span class=kt>int</span> <span class=n>newCapacity</span> <span class=o>=</span> <span class=n>oldCapacity</span> <span class=o>+</span> <span class=o>(</span><span class=n>oldCapacity</span> <span class=o>&gt;&gt;</span> <span class=n>1</span><span class=o>);</span>
+	<span class=k>if</span> <span class=o>(</span><span class=n>newCapacity</span> <span class=o>-</span> <span class=n>minCapacity</span> <span class=o>&lt;</span> <span class=n>0</span><span class=o>)</span>
+		<span class=n>newCapacity</span> <span class=o>=</span> <span class=n>minCapacity</span><span class=o>;</span>
+	<span class=c1>// 一般不会进入hugeCapacity这个方法，
+</span><span class=c1></span>	<span class=k>if</span> <span class=o>(</span><span class=n>newCapacity</span> <span class=o>-</span> <span class=n>MAX_ARRAY_SIZE</span> <span class=o>&gt;</span> <span class=n>0</span><span class=o>)</span>
+		<span class=n>newCapacity</span> <span class=o>=</span> <span class=n>hugeCapacity</span><span class=o>(</span><span class=n>minCapacity</span><span class=o>);</span>
+		
+	<span class=c1>// 复制elementData返回一个新的数组对象，这个时候list.add完成
+</span><span class=c1></span>	<span class=n>elementData</span> <span class=o>=</span> <span class=n>Arrays</span><span class=o>.</span><span class=na>copyOf</span><span class=o>(</span><span class=n>elementData</span><span class=o>,</span> <span class=n>newCapacity</span><span class=o>);</span>
+<span class=o>}</span>
+</code></pre></div><p>由此看到List集合做add（）时，第1步到第3步，都不会改变elementData对象，只有在第4步Arrays.copyOf的时候，返回一个新的数组对象。
+因此：当有线程A、B同时进入grow方法，两个线程都会执行Arrays.copyOf()方法，返回2个不同的elementData对象，
+假如，A先返回，B后返回，那么List.elementData == A.elementData，
+然后B也返回后，这时List.elementData == B.elementData
+这时，B.elementData就把A.elementData数据给覆盖了。导致A.elementData被丢失</p>
+<p><strong>这样就出现了导致线程不安全的隐患，在多个线程进行add操作时可能会抛出并发读写异常和数据丢失，覆盖等问题。</strong></p>
+<h3 id=7--如何避免arraylist的并发问题>7. 如何避免ArrayList的并发问题?<a hidden class=anchor aria-hidden=true href=#7--如何避免arraylist的并发问题>#</a></h3>
+<h6 id=1使用collectionssynchronizedlist方法对arraylist对象进行包装>1.使用Collections.synchronizedList()方法对ArrayList对象进行包装<a hidden class=anchor aria-hidden=true href=#1使用collectionssynchronizedlist方法对arraylist对象进行包装>#</a></h6>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=n>ArrayList</span><span class=o>&lt;</span><span class=n>Integer</span><span class=o>&gt;</span> <span class=n>arraylist</span> <span class=o>=</span> <span class=n>Collections</span><span class=o>.</span><span class=na>synchronizedList</span><span class=o>(</span><span class=k>new</span> <span class=n>ArrayList</span><span class=o>());</span>
+</code></pre></div><p>进行测试，结果正确，没有发现数据丢失问题。</p>
+<p>为什么synchronizedList（）方法可以解决并发问题？直接上源码(JKD1.8)</p>
+<p><code>java</code></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kd>public</span> <span class=kd>static</span> <span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;</span> <span class=nf>synchronizedList</span><span class=o>(</span><span class=n>List</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;</span> <span class=n>list</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=o>(</span><span class=n>list</span> <span class=k>instanceof</span> <span class=n>RandomAccess</span> <span class=o>?</span>
+            <span class=k>new</span> <span class=n>SynchronizedRandomAccessList</span><span class=o>&lt;&gt;(</span><span class=n>list</span><span class=o>)</span> <span class=o>:</span>
+            <span class=k>new</span> <span class=n>SynchronizedList</span><span class=o>&lt;&gt;(</span><span class=n>list</span><span class=o>));</span>
+<span class=o>}</span>
+<span class=n>SynchronizedList</span><span class=o>(</span><span class=n>List</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;</span> <span class=n>list</span><span class=o>)</span> <span class=o>{</span>
+	    <span class=kd>super</span><span class=o>(</span><span class=n>list</span><span class=o>);</span>
+	    <span class=k>this</span><span class=o>.</span><span class=na>list</span> <span class=o>=</span> <span class=n>list</span><span class=o>;</span>
+	<span class=o>}</span>
+	<span class=n>SynchronizedList</span><span class=o>(</span><span class=n>List</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;</span> <span class=n>list</span><span class=o>,</span> <span class=n>Object</span> <span class=n>mutex</span><span class=o>)</span> <span class=o>{</span>
+            <span class=kd>super</span><span class=o>(</span><span class=n>list</span><span class=o>,</span> <span class=n>mutex</span><span class=o>);</span>
+	    <span class=k>this</span><span class=o>.</span><span class=na>list</span> <span class=o>=</span> <span class=n>list</span><span class=o>;</span>
+        <span class=o>}</span>
+ 
+	<span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>equals</span><span class=o>(</span><span class=n>Object</span> <span class=n>o</span><span class=o>)</span> <span class=o>{</span>
+	    <span class=kd>synchronized</span><span class=o>(</span><span class=n>mutex</span><span class=o>)</span> <span class=o>{</span><span class=k>return</span> <span class=n>list</span><span class=o>.</span><span class=na>equals</span><span class=o>(</span><span class=n>o</span><span class=o>);}</span>
+        <span class=o>}</span>
+	<span class=kd>public</span> <span class=kt>int</span> <span class=nf>hashCode</span><span class=o>()</span> <span class=o>{</span>
+	    <span class=kd>synchronized</span><span class=o>(</span><span class=n>mutex</span><span class=o>)</span> <span class=o>{</span><span class=k>return</span> <span class=n>list</span><span class=o>.</span><span class=na>hashCode</span><span class=o>();}</span>
+        <span class=o>}</span>
+ 
+	<span class=kd>public</span> <span class=n>E</span> <span class=nf>get</span><span class=o>(</span><span class=kt>int</span> <span class=n>index</span><span class=o>)</span> <span class=o>{</span>
+	    <span class=kd>synchronized</span><span class=o>(</span><span class=n>mutex</span><span class=o>)</span> <span class=o>{</span><span class=k>return</span> <span class=n>list</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>index</span><span class=o>);}</span>
+        <span class=o>}</span>
+	<span class=kd>public</span> <span class=n>E</span> <span class=nf>set</span><span class=o>(</span><span class=kt>int</span> <span class=n>index</span><span class=o>,</span> <span class=n>E</span> <span class=n>element</span><span class=o>)</span> <span class=o>{</span>
+	    <span class=kd>synchronized</span><span class=o>(</span><span class=n>mutex</span><span class=o>)</span> <span class=o>{</span><span class=k>return</span> <span class=n>list</span><span class=o>.</span><span class=na>set</span><span class=o>(</span><span class=n>index</span><span class=o>,</span> <span class=n>element</span><span class=o>);}</span>
+        <span class=o>}</span>
+	<span class=kd>public</span> <span class=kt>void</span> <span class=nf>add</span><span class=o>(</span><span class=kt>int</span> <span class=n>index</span><span class=o>,</span> <span class=n>E</span> <span class=n>element</span><span class=o>)</span> <span class=o>{</span>
+	    <span class=kd>synchronized</span><span class=o>(</span><span class=n>mutex</span><span class=o>)</span> <span class=o>{</span><span class=n>list</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>index</span><span class=o>,</span> <span class=n>element</span><span class=o>);}</span>
+        <span class=o>}</span>
+	<span class=kd>public</span> <span class=n>E</span> <span class=nf>remove</span><span class=o>(</span><span class=kt>int</span> <span class=n>index</span><span class=o>)</span> <span class=o>{</span>
+	    <span class=kd>synchronized</span><span class=o>(</span><span class=n>mutex</span><span class=o>)</span> <span class=o>{</span><span class=k>return</span> <span class=n>list</span><span class=o>.</span><span class=na>remove</span><span class=o>(</span><span class=n>index</span><span class=o>);}</span>
+        <span class=o>}</span>
+ 
+	<span class=kd>public</span> <span class=kt>int</span> <span class=nf>indexOf</span><span class=o>(</span><span class=n>Object</span> <span class=n>o</span><span class=o>)</span> <span class=o>{</span>
+	    <span class=kd>synchronized</span><span class=o>(</span><span class=n>mutex</span><span class=o>)</span> <span class=o>{</span><span class=k>return</span> <span class=n>list</span><span class=o>.</span><span class=na>indexOf</span><span class=o>(</span><span class=n>o</span><span class=o>);}</span>
+        <span class=o>}</span>
+	<span class=kd>public</span> <span class=kt>int</span> <span class=nf>lastIndexOf</span><span class=o>(</span><span class=n>Object</span> <span class=n>o</span><span class=o>)</span> <span class=o>{</span>
+	    <span class=kd>synchronized</span><span class=o>(</span><span class=n>mutex</span><span class=o>)</span> <span class=o>{</span><span class=k>return</span> <span class=n>list</span><span class=o>.</span><span class=na>lastIndexOf</span><span class=o>(</span><span class=n>o</span><span class=o>);}</span>
+        <span class=o>}</span>
+ 
+	<span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>addAll</span><span class=o>(</span><span class=kt>int</span> <span class=n>index</span><span class=o>,</span> <span class=n>Collection</span><span class=o>&lt;?</span> <span class=kd>extends</span> <span class=n>E</span><span class=o>&gt;</span> <span class=n>c</span><span class=o>)</span> <span class=o>{</span>
+	    <span class=kd>synchronized</span><span class=o>(</span><span class=n>mutex</span><span class=o>)</span> <span class=o>{</span><span class=k>return</span> <span class=n>list</span><span class=o>.</span><span class=na>addAll</span><span class=o>(</span><span class=n>index</span><span class=o>,</span> <span class=n>c</span><span class=o>);}</span>
+        <span class=o>}</span>
+ 
+	<span class=kd>public</span> <span class=n>ListIterator</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;</span> <span class=nf>listIterator</span><span class=o>()</span> <span class=o>{</span>
+	    <span class=k>return</span> <span class=n>list</span><span class=o>.</span><span class=na>listIterator</span><span class=o>();</span> <span class=c1>// Must be manually synched by user
+</span><span class=c1></span>        <span class=o>}</span>
+ 
+	<span class=kd>public</span> <span class=n>ListIterator</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;</span> <span class=nf>listIterator</span><span class=o>(</span><span class=kt>int</span> <span class=n>index</span><span class=o>)</span> <span class=o>{</span>
+	    <span class=k>return</span> <span class=n>list</span><span class=o>.</span><span class=na>listIterator</span><span class=o>(</span><span class=n>index</span><span class=o>);</span> <span class=c1>// Must be manually synched by user
+</span><span class=c1></span>        <span class=o>}</span>
+ 
+	<span class=kd>public</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;</span> <span class=nf>subList</span><span class=o>(</span><span class=kt>int</span> <span class=n>fromIndex</span><span class=o>,</span> <span class=kt>int</span> <span class=n>toIndex</span><span class=o>)</span> <span class=o>{</span>
+	    <span class=kd>synchronized</span><span class=o>(</span><span class=n>mutex</span><span class=o>)</span> <span class=o>{</span>
+                <span class=k>return</span> <span class=k>new</span> <span class=n>SynchronizedList</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;(</span><span class=n>list</span><span class=o>.</span><span class=na>subList</span><span class=o>(</span><span class=n>fromIndex</span><span class=o>,</span> <span class=n>toIndex</span><span class=o>),</span>
+                                            <span class=n>mutex</span><span class=o>);</span>
+            <span class=o>}</span>
+        <span class=o>}</span>
+
+</code></pre></div><p>关于mutex的定义：</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kd>final</span> <span class=n>Collection</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;</span> <span class=n>c</span><span class=o>;</span>  <span class=c1>// Backing Collection
+</span><span class=c1></span><span class=kd>final</span> <span class=n>Object</span> <span class=n>mutex</span><span class=o>;</span>     <span class=c1>// Object on which to synchronize
+</span><span class=c1></span> 
+<span class=n>SynchronizedCollection</span><span class=o>(</span><span class=n>Collection</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;</span> <span class=n>c</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>if</span> <span class=o>(</span><span class=n>c</span><span class=o>==</span><span class=kc>null</span><span class=o>)</span>
+            <span class=k>throw</span> <span class=k>new</span> <span class=n>NullPointerException</span><span class=o>();</span>
+    <span class=k>this</span><span class=o>.</span><span class=na>c</span> <span class=o>=</span> <span class=n>c</span><span class=o>;</span>
+        <span class=n>mutex</span> <span class=o>=</span> <span class=k>this</span><span class=o>;</span>
+    <span class=o>}</span>
+<span class=n>SynchronizedCollection</span><span class=o>(</span><span class=n>Collection</span><span class=o>&lt;</span><span class=n>E</span><span class=o>&gt;</span> <span class=n>c</span><span class=o>,</span> <span class=n>Object</span> <span class=n>mutex</span><span class=o>)</span> <span class=o>{</span>
+    <span class=k>this</span><span class=o>.</span><span class=na>c</span> <span class=o>=</span> <span class=n>c</span><span class=o>;</span>
+        <span class=k>this</span><span class=o>.</span><span class=na>mutex</span> <span class=o>=</span> <span class=n>mutex</span><span class=o>;</span>
+    <span class=o>}</span>
+</code></pre></div><p>从源码中我们可以看到SynchronizedList是通过对mutex做同步来控制线程安全的，而mutex定义在其父类SynchronizedCollection中。mutex指向的就是当前对象自己，所以SynchronizedList是线程安全的根本原因是使用Synchronized对SynchronizedList的add,delete等操作进行加锁，但是这种锁的力度很大，效率比较低。</p>
+<h6 id=2使用并发容器copyonwritearraylist>2.使用并发容器CopyOnWriteArrayList<a hidden class=anchor aria-hidden=true href=#2使用并发容器copyonwritearraylist>#</a></h6>
+<p>CopyOnWriteArrayList list = new CopyOnWriteArrayList();
+源码(JKD1.8)：</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=kt>long</span> <span class=n>serialVersionUID</span> <span class=o>=</span> <span class=n>8673264195747942595L</span><span class=o>;</span>
+ 
+<span class=kd>transient</span> <span class=kd>final</span> <span class=n>ReentrantLock</span> <span class=n>lock</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ReentrantLock</span><span class=o>();</span>
+ 
+<span class=kd>private</span> <span class=kd>volatile</span> <span class=kd>transient</span> <span class=n>Object</span><span class=o>[]</span> <span class=n>array</span><span class=o>;</span>
+ 
+<span class=kd>final</span> <span class=n>Object</span><span class=o>[]</span> <span class=nf>getArray</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>array</span><span class=o>;</span>
+<span class=o>}</span>
+ 
+<span class=kd>final</span> <span class=kt>void</span> <span class=nf>setArray</span><span class=o>(</span><span class=n>Object</span><span class=o>[]</span> <span class=n>a</span><span class=o>)</span> <span class=o>{</span>
+    <span class=n>array</span> <span class=o>=</span> <span class=n>a</span><span class=o>;</span>
+<span class=o>}</span>
+
+<span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>add</span><span class=o>(</span><span class=n>E</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+	<span class=kd>final</span> <span class=n>ReentrantLock</span> <span class=n>lock</span> <span class=o>=</span> <span class=k>this</span><span class=o>.</span><span class=na>lock</span><span class=o>;</span>
+	<span class=n>lock</span><span class=o>.</span><span class=na>lock</span><span class=o>();</span>
+	<span class=k>try</span> <span class=o>{</span>
+	    <span class=n>Object</span><span class=o>[]</span> <span class=n>elements</span> <span class=o>=</span> <span class=n>getArray</span><span class=o>();</span>
+	    <span class=kt>int</span> <span class=n>len</span> <span class=o>=</span> <span class=n>elements</span><span class=o>.</span><span class=na>length</span><span class=o>;</span>
+	    <span class=n>Object</span><span class=o>[]</span> <span class=n>newElements</span> <span class=o>=</span> <span class=n>Arrays</span><span class=o>.</span><span class=na>copyOf</span><span class=o>(</span><span class=n>elements</span><span class=o>,</span> <span class=n>len</span> <span class=o>+</span> <span class=n>1</span><span class=o>);</span>
+	    <span class=n>newElements</span><span class=o>[</span><span class=n>len</span><span class=o>]</span> <span class=o>=</span> <span class=n>e</span><span class=o>;</span>
+	    <span class=n>setArray</span><span class=o>(</span><span class=n>newElements</span><span class=o>);</span>
+	    <span class=k>return</span> <span class=kc>true</span><span class=o>;</span>
+	<span class=o>}</span> <span class=k>finally</span> <span class=o>{</span>
+	    <span class=n>lock</span><span class=o>.</span><span class=na>unlock</span><span class=o>();</span>
+	<span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><p>从add方法知道：CopyOnWriteArrayList底层数组的扩容方式是一个一个地增加，而且每次把原来的元素通过Arrays.copy()方法copy到新数组中，然后在尾部加上新元素e.它的底层并发安全的保证是通过ReentrantLock进行保证的，CopyOnWriteArrayList和SynchronizedList的底层实现方式是不一样的，前者是通过Lock机制进行加锁，而后者是通过Synchronized进行加锁。</p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://www.wilds.top/tags/java/>Java</a></li>
+</ul>
+<nav class=paginav>
+<a class=prev href=https://www.wilds.top/posts/2adeb7d8/>
+<span class=title>« Prev Page</span>
+<br>
+<span>Windows 10自用应用集合</span>
+</a>
+<a class=next href=https://www.wilds.top/posts/52ce4309/>
+<span class=title>Next Page »</span>
+<br>
+<span>HashMap源码分析</span>
+</a>
+</nav>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://www.wilds.top/>Earlのblog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script src=https://git.wxfljc.cn/Earl/static/raw/branch/master/js/l2dwidget.min.js></script>
+<script>var hijiki='/hijiki/assets/hijiki.model.json',config;function show(a){config.model.jsonPath=a,L2Dwidget.init(config)}config={model:{jsonPath:''},display:{superSample:1,width:180,height:290,position:'lift',hOffset:0,vOffset:0},mobile:{show:!0,scale:.75,motion:!0},react:{opacityDefault:1,opacityOnHover:1}},window.onload=function(){show(hijiki)}</script>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+<script>document.querySelectorAll('pre > code').forEach(b=>{const c=b.parentNode.parentNode,a=document.createElement('button');a.classList.add('copy-code'),a.innerText='copy';function d(){a.innerText='copied!',setTimeout(()=>{a.innerText='copy'},2e3)}a.addEventListener('click',e=>{if('clipboard'in navigator){navigator.clipboard.writeText(b.textContent),d();return}const a=document.createRange();a.selectNodeContents(b);const c=window.getSelection();c.removeAllRanges(),c.addRange(a);try{document.execCommand('copy'),d()}catch(a){}c.removeRange(a)}),c.classList.contains("highlight")?c.appendChild(a):c.parentNode.firstChild==c||(b.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?b.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(a):b.parentNode.appendChild(a))})</script>
+</body>
+</html>

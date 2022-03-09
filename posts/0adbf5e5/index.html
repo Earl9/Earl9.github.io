@@ -1,0 +1,242 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>OneManager搭建教程 | Earlのblog</title>
+<meta name=keywords content="教程">
+<meta name=description content="利用OneManager搭建网盘">
+<meta name=author content>
+<link rel=canonical href=https://www.wilds.top/posts/0adbf5e5/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.a1a1073ca47c48aad5c688a1c98be56e6c93d809db1f643397d7fbc03356fe0f.css integrity="sha256-oaEHPKR8SKrVxoihyYvlbmyT2AnbH2Qzl9f7wDNW/g8=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://www.wilds.top/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://www.wilds.top/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://www.wilds.top/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://www.wilds.top/apple-touch-icon.png>
+<link rel=mask-icon href=https://www.wilds.top/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.91.2">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><style type=text/css>@font-face{font-family:myFont;src:url(https://git.wxfljc.cn/Earl/static/raw/branch/master/font/yuan.woff)}</style>
+<link rel=stylesheet href=https://git.wxfljc.cn/Earl/static/raw/branch/master/js/highlight.min.js>
+<script src=https://git.wxfljc.cn/Earl/static/raw/branch/master/css/androidstudio.min.css></script>
+<script>hljs.highlightAll()</script>
+<style>body{font-family:myFont,DFPHannotateW5-GB,SimHei,-apple-system,BlinkMacSystemFont,YouYuan,NSimSun,Yuanti SC,KaiTi,open sans,PingFang SC,sans-serif;font-size:19px}code{font-family:myFont,DFPHannotateW5-GB,SimHei,DFPHannotateW5-GB,-apple-system,BlinkMacSystemFont,YouYuan,NSimSun,KaiTi,Yuanti SC,Yuanti SC,open sans,sans-serif}</style>
+<link rel=stylesheet href=https://git.wxfljc.cn/Earl/static/raw/branch/master/css/font-awesome.min.css>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K1T3V5VR8S"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-K1T3V5VR8S',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="OneManager搭建教程">
+<meta property="og:description" content="利用OneManager搭建网盘">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.wilds.top/posts/0adbf5e5/"><meta property="og:image" content="https://www.wilds.top/papermod-cover.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-10-19T22:44:25+08:00">
+<meta property="article:modified_time" content="2021-10-19T22:44:25+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://www.wilds.top/papermod-cover.png">
+<meta name=twitter:title content="OneManager搭建教程">
+<meta name=twitter:description content="利用OneManager搭建网盘">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://www.wilds.top/posts/"},{"@type":"ListItem","position":2,"name":"OneManager搭建教程","item":"https://www.wilds.top/posts/0adbf5e5/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"OneManager搭建教程","name":"OneManager搭建教程","description":"利用OneManager搭建网盘","keywords":["教程"],"articleBody":" ​\tOneManager是一种能够挂载多种网盘的程序，可以通过网站直接去访问onedrive的文件，从而实现直链下载，网页在线观看视频等。\n​\t前提条件：onedrive账号，VPS一台。\n​\t项目地址oneManager, oneManager的部署方式有很多种，本文主要介绍在VPS上利用宝塔面板来部署的方法。\n   首先进入宝塔首页，安装好基本运行环境Nginx和PHP,然后进入网站页面\n  点击添加站点，填好域名，PHP版本随意\n  点击根目录进入网站文件地址\n  进入oneManager项目地址将项目压缩包下载到本地\n  然后进入宝塔将压缩包上传到网站根目录\n  上传完成后将压缩包解压，得到网站文件\n  然后打开网站设置修改网站目录\n  并进行伪静态设置\nNginx伪静态规则\nrewrite ^/(.*) /index.php?/$1 last; Apache伪静态规则\nRewriteEngine On RewriteRule ^(.*) index.php?/$1 [L]   网站设置到这来就结束了，接下来访问网站域名进行oneManager程序安装与网盘挂载\n  选择简体中文\n  确认已启用伪静态\n  然后设置网站管理员密码\n  接着进入首页点击登录进入后台管理页面\n  选择onedrive然后点击添加盘，输入基本信息\n  接着登录onedrive账号\n  获取权限\n  到这里就安装完成了，然后进入后台可以进行一些个性化设置\n  ","wordCount":"36","inLanguage":"en","datePublished":"2021-10-19T22:44:25+08:00","dateModified":"2021-10-19T22:44:25+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.wilds.top/posts/0adbf5e5/"},"publisher":{"@type":"Organization","name":"Earlのblog","logo":{"@type":"ImageObject","url":"https://www.wilds.top/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://www.wilds.top/ accesskey=h title="Earlのblog (Alt + H)">Earlのblog</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://www.wilds.top/search title>
+<span><i class="fa fa-search"></i></span>
+</a>
+</li>
+<li>
+<a href=https://www.wilds.top/archives/ title=Archive>
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href=https://www.wilds.top/categories title=Categories>
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a href=https://www.wilds.top/tags title=Tags>
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href=https://www.wilds.top/friends/ title=Friends>
+<span>Friends</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://www.wilds.top/>Home</a>&nbsp;»&nbsp;<a href=https://www.wilds.top/posts/>Posts</a></div>
+<h1 class=post-title>
+OneManager搭建教程
+</h1>
+<div class=post-description>
+利用OneManager搭建网盘
+</div>
+<div class=post-meta><span title="2021-10-19 22:44:25 +0800 CST">October 19, 2021</span>&nbsp;·&nbsp;1 min
+</div>
+</header>
+<div class=post-content><blockquote>
+<p>​ <code>OneManager</code>是一种能够挂载多种网盘的程序，可以通过网站直接去访问<code>onedrive</code>的文件，从而实现直链下载，网页在线观看视频等。</p>
+<p>​ 前提条件：<code>onedrive</code>账号，VPS一台。</p>
+<p>​ 项目地址<a href=https://github.com/qkqpttgf/OneManager-php>oneManager</a>,<code> oneManager</code>的部署方式有很多种，本文主要介绍在VPS上利用<a href=https://www.bt.cn/>宝塔面板</a>来部署的方法。</p>
+</blockquote>
+<ul>
+<li>
+<p>首先进入宝塔首页，安装好基本运行环境<code>Nginx</code>和<code>PHP</code>,然后进入网站页面</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-18.webp alt>
+</p>
+</li>
+<li>
+<p>点击添加站点，填好域名，<code>PHP</code>版本随意</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-19.webp alt>
+</p>
+</li>
+<li>
+<p>点击根目录进入网站文件地址</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-14.webp alt>
+</p>
+</li>
+<li>
+<p>进入<a href=https://github.com/qkqpttgf/OneManager-php>oneManager</a>项目地址将项目压缩包下载到本地</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-9.webp alt>
+</p>
+</li>
+<li>
+<p>然后进入宝塔将压缩包上传到网站根目录</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-13.webp alt>
+</p>
+</li>
+<li>
+<p>上传完成后将压缩包解压，得到网站文件</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-5.webp alt>
+</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-11.webp alt>
+</p>
+</li>
+<li>
+<p>然后打开网站设置修改网站目录</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-17.webp alt>
+</p>
+</li>
+<li>
+<p>并进行伪静态设置</p>
+<p><code>Nginx</code>伪静态规则</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=n>rewrite</span> <span class=o>^/(.*)</span> <span class=o>/</span><span class=n>index</span><span class=o>.</span><span class=na>php</span><span class=o>?/</span><span class=n>$1</span> <span class=n>last</span><span class=o>;</span>
+</code></pre></div><p><code>Apache</code>伪静态规则</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=n>RewriteEngine</span> <span class=n>On</span>
+<span class=n>RewriteRule</span> <span class=o>^(.*)</span> <span class=n>index</span><span class=o>.</span><span class=na>php</span><span class=o>?/</span><span class=n>$1</span> <span class=o>[</span><span class=n>L</span><span class=o>]</span>
+</code></pre></div><p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-10.webp alt>
+</p>
+</li>
+<li>
+<p>网站设置到这来就结束了，接下来访问网站域名进行<code>oneManager</code>程序安装与网盘挂载</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-8.webp alt>
+</p>
+</li>
+<li>
+<p>选择简体中文</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-12.webp alt>
+</p>
+</li>
+<li>
+<p>确认已启用伪静态</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-16.webp alt>
+</p>
+</li>
+<li>
+<p>然后设置网站管理员密码</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-20.webp alt>
+</p>
+</li>
+<li>
+<p>接着进入首页点击登录进入后台管理页面</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-7.webp alt>
+</p>
+</li>
+<li>
+<p>选择<code>onedrive</code>然后点击添加盘，输入基本信息</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-15.webp alt>
+</p>
+</li>
+<li>
+<p>接着登录<code>onedrive</code>账号</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-21.webp alt>
+</p>
+</li>
+<li>
+<p>获取权限</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-2.webp alt>
+</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-22.webp alt>
+</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016.webp alt>
+</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-1.webp alt>
+</p>
+</li>
+<li>
+<p>到这里就安装完成了，然后进入后台可以进行一些个性化设置</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-3.webp alt>
+</p>
+<p><img loading=lazy src=https://cdn.jsdelivr.net/gh/Earl9/img/2021/10/20210016-4.webp alt>
+</p>
+</li>
+</ul>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://www.wilds.top/tags/%E6%95%99%E7%A8%8B/>教程</a></li>
+</ul>
+<nav class=paginav>
+<a class=prev href=https://www.wilds.top/posts/9f22989d/>
+<span class=title>« Prev Page</span>
+<br>
+<span>宝塔破解面板破解</span>
+</a>
+<a class=next href=https://www.wilds.top/posts/353f4593/>
+<span class=title>Next Page »</span>
+<br>
+<span>WindowsTerminal美化</span>
+</a>
+</nav>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://www.wilds.top/>Earlのblog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script src=https://git.wxfljc.cn/Earl/static/raw/branch/master/js/l2dwidget.min.js></script>
+<script>var hijiki='/hijiki/assets/hijiki.model.json',config;function show(a){config.model.jsonPath=a,L2Dwidget.init(config)}config={model:{jsonPath:''},display:{superSample:1,width:180,height:290,position:'lift',hOffset:0,vOffset:0},mobile:{show:!0,scale:.75,motion:!0},react:{opacityDefault:1,opacityOnHover:1}},window.onload=function(){show(hijiki)}</script>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+<script>document.querySelectorAll('pre > code').forEach(b=>{const c=b.parentNode.parentNode,a=document.createElement('button');a.classList.add('copy-code'),a.innerText='copy';function d(){a.innerText='copied!',setTimeout(()=>{a.innerText='copy'},2e3)}a.addEventListener('click',e=>{if('clipboard'in navigator){navigator.clipboard.writeText(b.textContent),d();return}const a=document.createRange();a.selectNodeContents(b);const c=window.getSelection();c.removeAllRanges(),c.addRange(a);try{document.execCommand('copy'),d()}catch(a){}c.removeRange(a)}),c.classList.contains("highlight")?c.appendChild(a):c.parentNode.firstChild==c||(b.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?b.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(a):b.parentNode.appendChild(a))})</script>
+</body>
+</html>

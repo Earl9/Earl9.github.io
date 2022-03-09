@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags 🏷️ on Earlのblog</title>
+    <link>https://www.wilds.top/tags/</link>
+    <description>Recent content in Tags 🏷️ on Earlのblog</description>
+    <image>
+      <url>https://www.wilds.top/papermod-cover.png</url>
+      <link>https://www.wilds.top/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 31 Dec 2021 00:06:54 +0800</lastBuildDate><atom:link href="https://www.wilds.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java</title>
+      <link>https://www.wilds.top/tags/java/</link>
+      <pubDate>Fri, 31 Dec 2021 00:06:54 +0800</pubDate>
+      
+      <guid>https://www.wilds.top/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://www.wilds.top/tags/docker/</link>
+      <pubDate>Fri, 26 Nov 2021 22:49:46 +0800</pubDate>
+      
+      <guid>https://www.wilds.top/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://www.wilds.top/tags/mysql/</link>
+      <pubDate>Wed, 17 Nov 2021 22:53:35 +0800</pubDate>
+      
+      <guid>https://www.wilds.top/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>教程</title>
+      <link>https://www.wilds.top/tags/%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Fri, 05 Nov 2021 22:59:29 +0800</pubDate>
+      
+      <guid>https://www.wilds.top/tags/%E6%95%99%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IDEA</title>
+      <link>https://www.wilds.top/tags/idea/</link>
+      <pubDate>Sun, 17 Oct 2021 23:01:22 +0800</pubDate>
+      
+      <guid>https://www.wilds.top/tags/idea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>share</title>
+      <link>https://www.wilds.top/tags/share/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wilds.top/tags/share/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
