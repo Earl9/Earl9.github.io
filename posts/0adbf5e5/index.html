@@ -7,14 +7,14 @@
 <meta name=keywords content="教程">
 <meta name=description content="利用OneManager搭建网盘">
 <meta name=author content>
-<link rel=canonical href=https://www.wilds.top/posts/0adbf5e5/>
+<link rel=canonical href=https://blog.addxe.com/posts/0adbf5e5/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.a1a1073ca47c48aad5c688a1c98be56e6c93d809db1f643397d7fbc03356fe0f.css integrity="sha256-oaEHPKR8SKrVxoihyYvlbmyT2AnbH2Qzl9f7wDNW/g8=" rel="preload stylesheet" as=style>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://www.wilds.top/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://www.wilds.top/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://www.wilds.top/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://www.wilds.top/apple-touch-icon.png>
-<link rel=mask-icon href=https://www.wilds.top/safari-pinned-tab.svg>
+<link rel=icon href=https://blog.addxe.com/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://blog.addxe.com/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://blog.addxe.com/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://blog.addxe.com/apple-touch-icon.png>
+<link rel=mask-icon href=https://blog.addxe.com/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.91.2">
@@ -26,28 +26,28 @@
 <script src=https://static.addxe.com/static/css/androidstudio.min.css></script>
 <script>hljs.highlightAll()</script>
 <style>body{font-family:myFont,DFPHannotateW5-GB,SimHei,-apple-system,BlinkMacSystemFont,YouYuan,NSimSun,Yuanti SC,KaiTi,open sans,PingFang SC,sans-serif;font-size:19px}code{font-family:myFont,DFPHannotateW5-GB,SimHei,DFPHannotateW5-GB,-apple-system,BlinkMacSystemFont,YouYuan,NSimSun,KaiTi,Yuanti SC,Yuanti SC,open sans,sans-serif}</style>
-<link rel=stylesheet href=https://static.addxe.com/static/css/font-awesome.min.css>
+<link rel=stylesheet href=https://static.addxe.com/static/font-awesome-4.7.0/css/font-awesome.min.css>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1T3V5VR8S"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-K1T3V5VR8S',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="OneManager搭建教程">
 <meta property="og:description" content="利用OneManager搭建网盘">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.wilds.top/posts/0adbf5e5/"><meta property="og:image" content="https://www.wilds.top/papermod-cover.png"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://blog.addxe.com/posts/0adbf5e5/"><meta property="og:image" content="https://blog.addxe.com/papermod-cover.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-10-19T22:44:25+08:00">
 <meta property="article:modified_time" content="2021-10-19T22:44:25+08:00">
 <meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://www.wilds.top/papermod-cover.png">
+<meta name=twitter:image content="https://blog.addxe.com/papermod-cover.png">
 <meta name=twitter:title content="OneManager搭建教程">
 <meta name=twitter:description content="利用OneManager搭建网盘">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://www.wilds.top/posts/"},{"@type":"ListItem","position":2,"name":"OneManager搭建教程","item":"https://www.wilds.top/posts/0adbf5e5/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"OneManager搭建教程","name":"OneManager搭建教程","description":"利用OneManager搭建网盘","keywords":["教程"],"articleBody":" ​\tOneManager是一种能够挂载多种网盘的程序，可以通过网站直接去访问onedrive的文件，从而实现直链下载，网页在线观看视频等。\n​\t前提条件：onedrive账号，VPS一台。\n​\t项目地址oneManager, oneManager的部署方式有很多种，本文主要介绍在VPS上利用宝塔面板来部署的方法。\n   首先进入宝塔首页，安装好基本运行环境Nginx和PHP,然后进入网站页面\n  点击添加站点，填好域名，PHP版本随意\n  点击根目录进入网站文件地址\n  进入oneManager项目地址将项目压缩包下载到本地\n  然后进入宝塔将压缩包上传到网站根目录\n  上传完成后将压缩包解压，得到网站文件\n  然后打开网站设置修改网站目录\n  并进行伪静态设置\nNginx伪静态规则\nrewrite ^/(.*) /index.php?/$1 last; Apache伪静态规则\nRewriteEngine On RewriteRule ^(.*) index.php?/$1 [L]   网站设置到这来就结束了，接下来访问网站域名进行oneManager程序安装与网盘挂载\n  选择简体中文\n  确认已启用伪静态\n  然后设置网站管理员密码\n  接着进入首页点击登录进入后台管理页面\n  选择onedrive然后点击添加盘，输入基本信息\n  接着登录onedrive账号\n  获取权限\n  到这里就安装完成了，然后进入后台可以进行一些个性化设置\n  ","wordCount":"36","inLanguage":"en","datePublished":"2021-10-19T22:44:25+08:00","dateModified":"2021-10-19T22:44:25+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.wilds.top/posts/0adbf5e5/"},"publisher":{"@type":"Organization","name":"Earlのblog","logo":{"@type":"ImageObject","url":"https://www.wilds.top/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.addxe.com/posts/"},{"@type":"ListItem","position":2,"name":"OneManager搭建教程","item":"https://blog.addxe.com/posts/0adbf5e5/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"OneManager搭建教程","name":"OneManager搭建教程","description":"利用OneManager搭建网盘","keywords":["教程"],"articleBody":" ​\tOneManager是一种能够挂载多种网盘的程序，可以通过网站直接去访问onedrive的文件，从而实现直链下载，网页在线观看视频等。\n​\t前提条件：onedrive账号，VPS一台。\n​\t项目地址oneManager, oneManager的部署方式有很多种，本文主要介绍在VPS上利用宝塔面板来部署的方法。\n   首先进入宝塔首页，安装好基本运行环境Nginx和PHP,然后进入网站页面\n  点击添加站点，填好域名，PHP版本随意\n  点击根目录进入网站文件地址\n  进入oneManager项目地址将项目压缩包下载到本地\n  然后进入宝塔将压缩包上传到网站根目录\n  上传完成后将压缩包解压，得到网站文件\n  然后打开网站设置修改网站目录\n  并进行伪静态设置\nNginx伪静态规则\nrewrite ^/(.*) /index.php?/$1 last; Apache伪静态规则\nRewriteEngine On RewriteRule ^(.*) index.php?/$1 [L]   网站设置到这来就结束了，接下来访问网站域名进行oneManager程序安装与网盘挂载\n  选择简体中文\n  确认已启用伪静态\n  然后设置网站管理员密码\n  接着进入首页点击登录进入后台管理页面\n  选择onedrive然后点击添加盘，输入基本信息\n  接着登录onedrive账号\n  获取权限\n  到这里就安装完成了，然后进入后台可以进行一些个性化设置\n  ","wordCount":"36","inLanguage":"en","datePublished":"2021-10-19T22:44:25+08:00","dateModified":"2021-10-19T22:44:25+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.addxe.com/posts/0adbf5e5/"},"publisher":{"@type":"Organization","name":"Earlのblog","logo":{"@type":"ImageObject","url":"https://blog.addxe.com/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://www.wilds.top/ accesskey=h title="Earlのblog (Alt + H)">Earlのblog</a>
+<a href=https://blog.addxe.com/ accesskey=h title="Earlのblog (Alt + H)">Earlのblog</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
@@ -55,27 +55,27 @@
 </div>
 <ul id=menu>
 <li>
-<a href=https://www.wilds.top/search title>
+<a href=https://blog.addxe.com/search title>
 <span><i class="fa fa-search"></i></span>
 </a>
 </li>
 <li>
-<a href=https://www.wilds.top/archives/ title=Archive>
+<a href=https://blog.addxe.com/archives/ title=Archive>
 <span>Archive</span>
 </a>
 </li>
 <li>
-<a href=https://www.wilds.top/categories title=Categories>
+<a href=https://blog.addxe.com/categories title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://www.wilds.top/tags title=Tags>
+<a href=https://blog.addxe.com/tags title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://www.wilds.top/friends/ title=Friends>
+<a href=https://blog.addxe.com/friends/ title=Friends>
 <span>Friends</span>
 </a>
 </li>
@@ -85,7 +85,7 @@
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://www.wilds.top/>Home</a>&nbsp;»&nbsp;<a href=https://www.wilds.top/posts/>Posts</a></div>
+<div class=breadcrumbs><a href=https://blog.addxe.com/>Home</a>&nbsp;»&nbsp;<a href=https://blog.addxe.com/posts/>Posts</a></div>
 <h1 class=post-title>
 OneManager搭建教程
 </h1>
@@ -205,15 +205,15 @@ OneManager搭建教程
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://www.wilds.top/tags/%E6%95%99%E7%A8%8B/>教程</a></li>
+<li><a href=https://blog.addxe.com/tags/%E6%95%99%E7%A8%8B/>教程</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://www.wilds.top/posts/9f22989d/>
+<a class=prev href=https://blog.addxe.com/posts/9f22989d/>
 <span class=title>« Prev Page</span>
 <br>
 <span>宝塔破解面板破解</span>
 </a>
-<a class=next href=https://www.wilds.top/posts/353f4593/>
+<a class=next href=https://blog.addxe.com/posts/353f4593/>
 <span class=title>Next Page »</span>
 <br>
 <span>WindowsTerminal美化</span>
@@ -223,7 +223,7 @@ OneManager搭建教程
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://www.wilds.top/>Earlのblog</a></span>
+<span>&copy; 2022 <a href=https://blog.addxe.com/>Earlのblog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

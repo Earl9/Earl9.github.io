@@ -7,14 +7,14 @@
 <meta name=keywords content="Docker">
 <meta name=description content="Docker常用命令">
 <meta name=author content>
-<link rel=canonical href=https://www.wilds.top/posts/e32c011c/>
+<link rel=canonical href=https://blog.addxe.com/posts/e32c011c/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.a1a1073ca47c48aad5c688a1c98be56e6c93d809db1f643397d7fbc03356fe0f.css integrity="sha256-oaEHPKR8SKrVxoihyYvlbmyT2AnbH2Qzl9f7wDNW/g8=" rel="preload stylesheet" as=style>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://www.wilds.top/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://www.wilds.top/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://www.wilds.top/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://www.wilds.top/apple-touch-icon.png>
-<link rel=mask-icon href=https://www.wilds.top/safari-pinned-tab.svg>
+<link rel=icon href=https://blog.addxe.com/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://blog.addxe.com/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://blog.addxe.com/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://blog.addxe.com/apple-touch-icon.png>
+<link rel=mask-icon href=https://blog.addxe.com/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.91.2">
@@ -26,28 +26,28 @@
 <script src=https://static.addxe.com/static/css/androidstudio.min.css></script>
 <script>hljs.highlightAll()</script>
 <style>body{font-family:myFont,DFPHannotateW5-GB,SimHei,-apple-system,BlinkMacSystemFont,YouYuan,NSimSun,Yuanti SC,KaiTi,open sans,PingFang SC,sans-serif;font-size:19px}code{font-family:myFont,DFPHannotateW5-GB,SimHei,DFPHannotateW5-GB,-apple-system,BlinkMacSystemFont,YouYuan,NSimSun,KaiTi,Yuanti SC,Yuanti SC,open sans,sans-serif}</style>
-<link rel=stylesheet href=https://static.addxe.com/static/css/font-awesome.min.css>
+<link rel=stylesheet href=https://static.addxe.com/static/font-awesome-4.7.0/css/font-awesome.min.css>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1T3V5VR8S"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-K1T3V5VR8S',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="Docker笔记">
 <meta property="og:description" content="Docker常用命令">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.wilds.top/posts/e32c011c/"><meta property="og:image" content="https://www.wilds.top/papermod-cover.png"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://blog.addxe.com/posts/e32c011c/"><meta property="og:image" content="https://blog.addxe.com/papermod-cover.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-11-26T22:49:46+08:00">
 <meta property="article:modified_time" content="2021-11-26T22:49:46+08:00">
 <meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://www.wilds.top/papermod-cover.png">
+<meta name=twitter:image content="https://blog.addxe.com/papermod-cover.png">
 <meta name=twitter:title content="Docker笔记">
 <meta name=twitter:description content="Docker常用命令">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://www.wilds.top/posts/"},{"@type":"ListItem","position":2,"name":"Docker笔记","item":"https://www.wilds.top/posts/e32c011c/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Docker笔记","name":"Docker笔记","description":"Docker常用命令","keywords":["Docker"],"articleBody":"Docker服务相关命令   启动Docker服务\nsystemctl start docker   停止Docker服务\nsystemctl stop docker   重启Docker服务\nsystemctl restart docker   查看Docker服务状态\nsystemctl status docker   开机启动Docker服务\nsystemctl enable docker   Docker镜像相关命令   查看镜像\ndocker images   搜索镜像\ndocker search 镜像名称   下载镜像\ndocker pull 镜像名称:版本号   删除镜像\ndocker rmi 镜像名称:版本号/镜像ID   Docker容器相关命令   查看容器\ndocker ps\t//查看正在运行的容器 docker ps -a\t//查看所有容器(包括已经停止的容器   创建容器\n 交互式容器:创建完这个容器后 容器会立即启动 并且自动进入到容器内部 退出容器后容器会自动关闭-it 代表创建的容器是交互式的  docker run -it --name=容器的名称 镜像名称:版本号 /bin/bash  守护式容器: 创建完这个容器后 容器会立即启动 不会自动进入到容器内部 退出容器后容器会不会关 闭-id 代表创建的容器是守护式的  docker run -id --name=容器的名称 镜像名称:版本号  创建式容器:创建完这个容器不会立即启动 也不会进入到容器内部  docker create --name=容器名称 镜像名称:版本   进入容器\ndocker exec -it 容器名称/容器ID /bin/bash   启动容器\ndocker start 容器名称/容器ID   停止容器\ndocker stop 容器名称/容器ID   删除容器\ndocker rm 容器名称/容器ID   查看容器信息\ndocker inspect 容器名称/容器ID   容器导出为镜像\ndocker commit 容器名称 镜像名称   镜像导出为压缩文件\ndocker save –o tar文件名 镜像名   导入压缩文件为镜像\ndocker load -i tar文件名   ","wordCount":"114","inLanguage":"en","datePublished":"2021-11-26T22:49:46+08:00","dateModified":"2021-11-26T22:49:46+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.wilds.top/posts/e32c011c/"},"publisher":{"@type":"Organization","name":"Earlのblog","logo":{"@type":"ImageObject","url":"https://www.wilds.top/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.addxe.com/posts/"},{"@type":"ListItem","position":2,"name":"Docker笔记","item":"https://blog.addxe.com/posts/e32c011c/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Docker笔记","name":"Docker笔记","description":"Docker常用命令","keywords":["Docker"],"articleBody":"Docker服务相关命令   启动Docker服务\nsystemctl start docker   停止Docker服务\nsystemctl stop docker   重启Docker服务\nsystemctl restart docker   查看Docker服务状态\nsystemctl status docker   开机启动Docker服务\nsystemctl enable docker   Docker镜像相关命令   查看镜像\ndocker images   搜索镜像\ndocker search 镜像名称   下载镜像\ndocker pull 镜像名称:版本号   删除镜像\ndocker rmi 镜像名称:版本号/镜像ID   Docker容器相关命令   查看容器\ndocker ps\t//查看正在运行的容器 docker ps -a\t//查看所有容器(包括已经停止的容器   创建容器\n 交互式容器:创建完这个容器后 容器会立即启动 并且自动进入到容器内部 退出容器后容器会自动关闭-it 代表创建的容器是交互式的  docker run -it --name=容器的名称 镜像名称:版本号 /bin/bash  守护式容器: 创建完这个容器后 容器会立即启动 不会自动进入到容器内部 退出容器后容器会不会关 闭-id 代表创建的容器是守护式的  docker run -id --name=容器的名称 镜像名称:版本号  创建式容器:创建完这个容器不会立即启动 也不会进入到容器内部  docker create --name=容器名称 镜像名称:版本   进入容器\ndocker exec -it 容器名称/容器ID /bin/bash   启动容器\ndocker start 容器名称/容器ID   停止容器\ndocker stop 容器名称/容器ID   删除容器\ndocker rm 容器名称/容器ID   查看容器信息\ndocker inspect 容器名称/容器ID   容器导出为镜像\ndocker commit 容器名称 镜像名称   镜像导出为压缩文件\ndocker save –o tar文件名 镜像名   导入压缩文件为镜像\ndocker load -i tar文件名   ","wordCount":"114","inLanguage":"en","datePublished":"2021-11-26T22:49:46+08:00","dateModified":"2021-11-26T22:49:46+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.addxe.com/posts/e32c011c/"},"publisher":{"@type":"Organization","name":"Earlのblog","logo":{"@type":"ImageObject","url":"https://blog.addxe.com/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://www.wilds.top/ accesskey=h title="Earlのblog (Alt + H)">Earlのblog</a>
+<a href=https://blog.addxe.com/ accesskey=h title="Earlのblog (Alt + H)">Earlのblog</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
@@ -55,27 +55,27 @@
 </div>
 <ul id=menu>
 <li>
-<a href=https://www.wilds.top/search title>
+<a href=https://blog.addxe.com/search title>
 <span><i class="fa fa-search"></i></span>
 </a>
 </li>
 <li>
-<a href=https://www.wilds.top/archives/ title=Archive>
+<a href=https://blog.addxe.com/archives/ title=Archive>
 <span>Archive</span>
 </a>
 </li>
 <li>
-<a href=https://www.wilds.top/categories title=Categories>
+<a href=https://blog.addxe.com/categories title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://www.wilds.top/tags title=Tags>
+<a href=https://blog.addxe.com/tags title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://www.wilds.top/friends/ title=Friends>
+<a href=https://blog.addxe.com/friends/ title=Friends>
 <span>Friends</span>
 </a>
 </li>
@@ -85,7 +85,7 @@
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://www.wilds.top/>Home</a>&nbsp;»&nbsp;<a href=https://www.wilds.top/posts/>Posts</a></div>
+<div class=breadcrumbs><a href=https://blog.addxe.com/>Home</a>&nbsp;»&nbsp;<a href=https://blog.addxe.com/posts/>Posts</a></div>
 <h1 class=post-title>
 Docker笔记
 </h1>
@@ -211,15 +211,15 @@ docker ps -a	//查看所有容器<span class=o>(</span>包括已经停止的容�
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://www.wilds.top/tags/docker/>Docker</a></li>
+<li><a href=https://blog.addxe.com/tags/docker/>Docker</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://www.wilds.top/posts/3af29979/>
+<a class=prev href=https://blog.addxe.com/posts/3af29979/>
 <span class=title>« Prev Page</span>
 <br>
 <span>MySQL优化</span>
 </a>
-<a class=next href=https://www.wilds.top/posts/ff79dbf8/>
+<a class=next href=https://blog.addxe.com/posts/ff79dbf8/>
 <span class=title>Next Page »</span>
 <br>
 <span>Lambda表达式</span>
@@ -229,7 +229,7 @@ docker ps -a	//查看所有容器<span class=o>(</span>包括已经停止的容�
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://www.wilds.top/>Earlのblog</a></span>
+<span>&copy; 2022 <a href=https://blog.addxe.com/>Earlのblog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

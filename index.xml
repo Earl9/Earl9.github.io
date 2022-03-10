@@ -2,156 +2,156 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Earlのblog</title>
-    <link>https://www.wilds.top/</link>
+    <link>https://blog.addxe.com/</link>
     <description>Recent content on Earlのblog</description>
     <image>
-      <url>https://www.wilds.top/papermod-cover.png</url>
-      <link>https://www.wilds.top/papermod-cover.png</link>
+      <url>https://blog.addxe.com/papermod-cover.png</url>
+      <link>https://blog.addxe.com/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 31 Dec 2021 00:06:54 +0800</lastBuildDate><atom:link href="https://www.wilds.top/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Dec 2021 00:06:54 +0800</lastBuildDate><atom:link href="https://blog.addxe.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows 10自用应用集合</title>
-      <link>https://www.wilds.top/posts/2adeb7d8/</link>
+      <link>https://blog.addxe.com/posts/2adeb7d8/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wilds.top/posts/2adeb7d8/</guid>
+      <guid>https://blog.addxe.com/posts/2adeb7d8/</guid>
       <description>一些好的应用与网站分享</description>
     </item>
     
     <item>
       <title>ArrayList经典面试题</title>
-      <link>https://www.wilds.top/posts/ad0a121e/</link>
+      <link>https://blog.addxe.com/posts/ad0a121e/</link>
       <pubDate>Fri, 31 Dec 2021 00:06:54 +0800</pubDate>
       
-      <guid>https://www.wilds.top/posts/ad0a121e/</guid>
+      <guid>https://blog.addxe.com/posts/ad0a121e/</guid>
       <description>ArrayList源码分析</description>
     </item>
     
     <item>
       <title>HashMap源码分析</title>
-      <link>https://www.wilds.top/posts/52ce4309/</link>
+      <link>https://blog.addxe.com/posts/52ce4309/</link>
       <pubDate>Sun, 05 Dec 2021 22:47:12 +0800</pubDate>
       
-      <guid>https://www.wilds.top/posts/52ce4309/</guid>
+      <guid>https://blog.addxe.com/posts/52ce4309/</guid>
       <description>HashMap源码学习</description>
     </item>
     
     <item>
       <title>MySQL优化</title>
-      <link>https://www.wilds.top/posts/3af29979/</link>
+      <link>https://blog.addxe.com/posts/3af29979/</link>
       <pubDate>Wed, 17 Nov 2021 22:53:35 +0800</pubDate>
       
-      <guid>https://www.wilds.top/posts/3af29979/</guid>
+      <guid>https://blog.addxe.com/posts/3af29979/</guid>
       <description>MySQL优化技巧</description>
     </item>
     
     <item>
       <title>Docker笔记</title>
-      <link>https://www.wilds.top/posts/e32c011c/</link>
+      <link>https://blog.addxe.com/posts/e32c011c/</link>
       <pubDate>Fri, 26 Nov 2021 22:49:46 +0800</pubDate>
       
-      <guid>https://www.wilds.top/posts/e32c011c/</guid>
+      <guid>https://blog.addxe.com/posts/e32c011c/</guid>
       <description>Docker常用命令</description>
     </item>
     
     <item>
       <title>Lambda表达式</title>
-      <link>https://www.wilds.top/posts/ff79dbf8/</link>
+      <link>https://blog.addxe.com/posts/ff79dbf8/</link>
       <pubDate>Mon, 08 Nov 2021 22:57:16 +0800</pubDate>
       
-      <guid>https://www.wilds.top/posts/ff79dbf8/</guid>
+      <guid>https://blog.addxe.com/posts/ff79dbf8/</guid>
       <description>Lambda常见用法</description>
     </item>
     
     <item>
       <title>Hackintosh安装</title>
-      <link>https://www.wilds.top/posts/99c03bb5/</link>
+      <link>https://blog.addxe.com/posts/99c03bb5/</link>
       <pubDate>Fri, 05 Nov 2021 22:59:29 +0800</pubDate>
       
-      <guid>https://www.wilds.top/posts/99c03bb5/</guid>
+      <guid>https://blog.addxe.com/posts/99c03bb5/</guid>
       <description>黑苹果安装记录</description>
     </item>
     
     <item>
       <title>宝塔破解面板破解</title>
-      <link>https://www.wilds.top/posts/9f22989d/</link>
+      <link>https://blog.addxe.com/posts/9f22989d/</link>
       <pubDate>Mon, 25 Oct 2021 22:37:02 +0800</pubDate>
       
-      <guid>https://www.wilds.top/posts/9f22989d/</guid>
+      <guid>https://blog.addxe.com/posts/9f22989d/</guid>
       <description>宝塔高级功能解锁</description>
     </item>
     
     <item>
       <title>OneManager搭建教程</title>
-      <link>https://www.wilds.top/posts/0adbf5e5/</link>
+      <link>https://blog.addxe.com/posts/0adbf5e5/</link>
       <pubDate>Tue, 19 Oct 2021 22:44:25 +0800</pubDate>
       
-      <guid>https://www.wilds.top/posts/0adbf5e5/</guid>
+      <guid>https://blog.addxe.com/posts/0adbf5e5/</guid>
       <description>利用OneManager搭建网盘</description>
     </item>
     
     <item>
       <title>WindowsTerminal美化</title>
-      <link>https://www.wilds.top/posts/353f4593/</link>
+      <link>https://blog.addxe.com/posts/353f4593/</link>
       <pubDate>Tue, 19 Oct 2021 22:41:18 +0800</pubDate>
       
-      <guid>https://www.wilds.top/posts/353f4593/</guid>
+      <guid>https://blog.addxe.com/posts/353f4593/</guid>
       <description>终端美化，告别传统黑窗口</description>
     </item>
     
     <item>
       <title>IDEA常用快捷键</title>
-      <link>https://www.wilds.top/posts/64a1faea/</link>
+      <link>https://blog.addxe.com/posts/64a1faea/</link>
       <pubDate>Sun, 17 Oct 2021 23:01:22 +0800</pubDate>
       
-      <guid>https://www.wilds.top/posts/64a1faea/</guid>
+      <guid>https://blog.addxe.com/posts/64a1faea/</guid>
       <description>idea快捷键汇总</description>
     </item>
     
     <item>
       <title>Java基础知识总结</title>
-      <link>https://www.wilds.top/posts/dc554a88/</link>
+      <link>https://blog.addxe.com/posts/dc554a88/</link>
       <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wilds.top/posts/dc554a88/</guid>
+      <guid>https://blog.addxe.com/posts/dc554a88/</guid>
       <description>Java基础知识回顾</description>
     </item>
     
     <item>
       <title>picgo&#43;github搭建图床</title>
-      <link>https://www.wilds.top/posts/584214c1/</link>
+      <link>https://blog.addxe.com/posts/584214c1/</link>
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wilds.top/posts/584214c1/</guid>
+      <guid>https://blog.addxe.com/posts/584214c1/</guid>
       <description>利用github搭建免费个人图床</description>
     </item>
     
     <item>
       <title>ArchLinux&#43;Windows10双系统安装笔记</title>
-      <link>https://www.wilds.top/posts/307d4fd8/</link>
+      <link>https://blog.addxe.com/posts/307d4fd8/</link>
       <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wilds.top/posts/307d4fd8/</guid>
+      <guid>https://blog.addxe.com/posts/307d4fd8/</guid>
       <description>archLinux探索</description>
     </item>
     
     <item>
       <title>Hexo&#43;Github 搭建博客</title>
-      <link>https://www.wilds.top/posts/1797fdb5/</link>
+      <link>https://blog.addxe.com/posts/1797fdb5/</link>
       <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wilds.top/posts/1797fdb5/</guid>
+      <guid>https://blog.addxe.com/posts/1797fdb5/</guid>
       <description>“0”基础搭建个人博客</description>
     </item>
     
     
     <item>
       <title>Friends 👋</title>
-      <link>https://www.wilds.top/friends/</link>
+      <link>https://blog.addxe.com/friends/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wilds.top/friends/</guid>
+      <guid>https://blog.addxe.com/friends/</guid>
       <description>.friends { padding: 1em 0; border: 2px solid transparent; border-bottom: 1px dashed var(--color-contrast-low); display: flex; transition: all .5s; } .friends .friend { text-decoration: none; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; } .friends .name { font-weight: bold; margin: 0.375em 0; } .friends .excerpt { font-size: 0.875em; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; } .friends .avatar { width: 4em !important; height: 4em !important; margin: 0 1em 0 0 !important; z-index: 0; }  AimerNeige&amp;#39;s Blog 技术宅拯救世界    OneDriveShare 个人网盘    陶辉的博客 陶辉的技术分享    </description>
     </item>
     

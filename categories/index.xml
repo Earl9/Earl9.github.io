@@ -2,83 +2,83 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories 🤹‍♂️ on Earlのblog</title>
-    <link>https://www.wilds.top/categories/</link>
+    <link>https://blog.addxe.com/categories/</link>
     <description>Recent content in Categories 🤹‍♂️ on Earlのblog</description>
     <image>
-      <url>https://www.wilds.top/papermod-cover.png</url>
-      <link>https://www.wilds.top/papermod-cover.png</link>
+      <url>https://blog.addxe.com/papermod-cover.png</url>
+      <link>https://blog.addxe.com/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 31 Dec 2021 00:06:54 +0800</lastBuildDate><atom:link href="https://www.wilds.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Dec 2021 00:06:54 +0800</lastBuildDate><atom:link href="https://blog.addxe.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java</title>
-      <link>https://www.wilds.top/categories/java/</link>
+      <link>https://blog.addxe.com/categories/java/</link>
       <pubDate>Fri, 31 Dec 2021 00:06:54 +0800</pubDate>
       
-      <guid>https://www.wilds.top/categories/java/</guid>
+      <guid>https://blog.addxe.com/categories/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://www.wilds.top/categories/docker/</link>
+      <link>https://blog.addxe.com/categories/docker/</link>
       <pubDate>Fri, 26 Nov 2021 22:49:46 +0800</pubDate>
       
-      <guid>https://www.wilds.top/categories/docker/</guid>
+      <guid>https://blog.addxe.com/categories/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MySQL</title>
-      <link>https://www.wilds.top/categories/mysql/</link>
+      <link>https://blog.addxe.com/categories/mysql/</link>
       <pubDate>Wed, 17 Nov 2021 22:53:35 +0800</pubDate>
       
-      <guid>https://www.wilds.top/categories/mysql/</guid>
+      <guid>https://blog.addxe.com/categories/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>macOS</title>
-      <link>https://www.wilds.top/categories/macos/</link>
+      <link>https://blog.addxe.com/categories/macos/</link>
       <pubDate>Fri, 05 Nov 2021 22:59:29 +0800</pubDate>
       
-      <guid>https://www.wilds.top/categories/macos/</guid>
+      <guid>https://blog.addxe.com/categories/macos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://www.wilds.top/categories/linux/</link>
+      <link>https://blog.addxe.com/categories/linux/</link>
       <pubDate>Mon, 25 Oct 2021 22:37:02 +0800</pubDate>
       
-      <guid>https://www.wilds.top/categories/linux/</guid>
+      <guid>https://blog.addxe.com/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Terminal</title>
-      <link>https://www.wilds.top/categories/terminal/</link>
+      <link>https://blog.addxe.com/categories/terminal/</link>
       <pubDate>Tue, 19 Oct 2021 22:41:18 +0800</pubDate>
       
-      <guid>https://www.wilds.top/categories/terminal/</guid>
+      <guid>https://blog.addxe.com/categories/terminal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>software</title>
-      <link>https://www.wilds.top/categories/software/</link>
+      <link>https://blog.addxe.com/categories/software/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wilds.top/categories/software/</guid>
+      <guid>https://blog.addxe.com/categories/software/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hexo,Git,NPM</title>
-      <link>https://www.wilds.top/categories/hexogitnpm/</link>
+      <link>https://blog.addxe.com/categories/hexogitnpm/</link>
       <pubDate>Thu, 16 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wilds.top/categories/hexogitnpm/</guid>
+      <guid>https://blog.addxe.com/categories/hexogitnpm/</guid>
       <description></description>
     </item>
     

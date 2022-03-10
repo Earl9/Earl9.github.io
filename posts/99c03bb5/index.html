@@ -7,14 +7,14 @@
 <meta name=keywords content="教程">
 <meta name=description content="黑苹果安装记录">
 <meta name=author content>
-<link rel=canonical href=https://www.wilds.top/posts/99c03bb5/>
+<link rel=canonical href=https://blog.addxe.com/posts/99c03bb5/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.a1a1073ca47c48aad5c688a1c98be56e6c93d809db1f643397d7fbc03356fe0f.css integrity="sha256-oaEHPKR8SKrVxoihyYvlbmyT2AnbH2Qzl9f7wDNW/g8=" rel="preload stylesheet" as=style>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://www.wilds.top/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://www.wilds.top/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://www.wilds.top/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://www.wilds.top/apple-touch-icon.png>
-<link rel=mask-icon href=https://www.wilds.top/safari-pinned-tab.svg>
+<link rel=icon href=https://blog.addxe.com/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://blog.addxe.com/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://blog.addxe.com/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://blog.addxe.com/apple-touch-icon.png>
+<link rel=mask-icon href=https://blog.addxe.com/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.91.2">
@@ -26,28 +26,28 @@
 <script src=https://static.addxe.com/static/css/androidstudio.min.css></script>
 <script>hljs.highlightAll()</script>
 <style>body{font-family:myFont,DFPHannotateW5-GB,SimHei,-apple-system,BlinkMacSystemFont,YouYuan,NSimSun,Yuanti SC,KaiTi,open sans,PingFang SC,sans-serif;font-size:19px}code{font-family:myFont,DFPHannotateW5-GB,SimHei,DFPHannotateW5-GB,-apple-system,BlinkMacSystemFont,YouYuan,NSimSun,KaiTi,Yuanti SC,Yuanti SC,open sans,sans-serif}</style>
-<link rel=stylesheet href=https://static.addxe.com/static/css/font-awesome.min.css>
+<link rel=stylesheet href=https://static.addxe.com/static/font-awesome-4.7.0/css/font-awesome.min.css>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1T3V5VR8S"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-K1T3V5VR8S',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="Hackintosh安装">
 <meta property="og:description" content="黑苹果安装记录">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.wilds.top/posts/99c03bb5/"><meta property="og:image" content="https://www.wilds.top/papermod-cover.png"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://blog.addxe.com/posts/99c03bb5/"><meta property="og:image" content="https://blog.addxe.com/papermod-cover.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-11-05T22:59:29+08:00">
 <meta property="article:modified_time" content="2021-11-05T22:59:29+08:00">
 <meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://www.wilds.top/papermod-cover.png">
+<meta name=twitter:image content="https://blog.addxe.com/papermod-cover.png">
 <meta name=twitter:title content="Hackintosh安装">
 <meta name=twitter:description content="黑苹果安装记录">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://www.wilds.top/posts/"},{"@type":"ListItem","position":2,"name":"Hackintosh安装","item":"https://www.wilds.top/posts/99c03bb5/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Hackintosh安装","name":"Hackintosh安装","description":"黑苹果安装记录","keywords":["教程"],"articleBody":"一、下载镜像   黑果小兵\n  二、下载EFI   EFI远景论坛大佬制作\n  三、制作启动盘   将U盘文件备份，然后进行格式化\n U盘必须在16G及以上\n   四、修改启动盘中的EFI文件  使用DiskGenus进行文件替换    将EFI文件全部删除，然后将下载好的EFI文件放进去\n  五、修改ESP分区大小  使用DiskGenus扩容win自带ESP分区，可以将ESP分区直接删除，然后新建500M的ESP分区，并使用DISM++进行引导恢复（双硬盘可直接在另一个盘新建ESP分区）  六、准备安装磁盘  使用DiskGenus划分出要安装macOS的磁盘  七、关闭安全启动   开机狂按F10进入BIOS设置-选择系统设置-选择启动选项-修改安全启动模式为禁用\n  八、开始安装  开机选择U盘启动，狂按F9键进入，选择制作的启动盘里的启动选项，选择第一个，第二个为PE的启动项    进入OC引导界面，选择安装install macos\n  进入到启动界面\n  选择简体中文\n  首先选择磁盘工具将之前划分出来的分区进行格式化\n  找到划分的分区，根据大小和位置判断\n  点击上方的抹除，名称随意，固态硬盘格式选择APFS（机械硬盘选择MacOS日志），如果EFI分区过小会出现抹除失败\n  接下来就可以进行系统安装了\n  一路下一步，协议全部同意\n  安装过程会自动重启，此时第二次进到OC引导界面，选择新增的macOS install选项\n  进入开机界面，稍后会再次重启\n 这里会重启多次，每次重启依然选择macOS install选项，直到出现这个选项消失，此时出现macOS系统盘选项，这时已安装完成，可以开机进入系统了\n   开机进入，一路下一步，不要登录账号，不要开启定位\n  安装完成，进入桌面\n  九、将EFI文件放入ESP分区中   将U盘中能顺利安装并启动macOS的EFI放到硬盘的ESP分区里，这里采用黑果小兵提供的挂载方法，方便以后替换EFI文件（也可直接使用DiskGenus将文件EFI文件放入\n  在Windows操作系统下面,以系统管理员身份打开cmd窗口,输入命令:\nc:\\diskpart list disk # 磁盘列表 select disk n # 选择EFI分区所在的磁盘，n为磁盘号 list partition # 磁盘分区列表 select partition n # 选择EFI分区，n为EFI分区号 set id=\"ebd0a0a2-b9e5-4433-87c0-68b6b72699c7\"\t# 设置为基本数据分区 assign letter=X # x为EFI分区盘符 exit\t# 退出diskpart notepad\t  执行完重启一次，之后就可以直接替换文件了\n  十、修改启动选项  使用DiskGenus修改启动项顺序，将opencore引导放在首位  ","wordCount":"71","inLanguage":"en","datePublished":"2021-11-05T22:59:29+08:00","dateModified":"2021-11-05T22:59:29+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.wilds.top/posts/99c03bb5/"},"publisher":{"@type":"Organization","name":"Earlのblog","logo":{"@type":"ImageObject","url":"https://www.wilds.top/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://blog.addxe.com/posts/"},{"@type":"ListItem","position":2,"name":"Hackintosh安装","item":"https://blog.addxe.com/posts/99c03bb5/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Hackintosh安装","name":"Hackintosh安装","description":"黑苹果安装记录","keywords":["教程"],"articleBody":"一、下载镜像   黑果小兵\n  二、下载EFI   EFI远景论坛大佬制作\n  三、制作启动盘   将U盘文件备份，然后进行格式化\n U盘必须在16G及以上\n   四、修改启动盘中的EFI文件  使用DiskGenus进行文件替换    将EFI文件全部删除，然后将下载好的EFI文件放进去\n  五、修改ESP分区大小  使用DiskGenus扩容win自带ESP分区，可以将ESP分区直接删除，然后新建500M的ESP分区，并使用DISM++进行引导恢复（双硬盘可直接在另一个盘新建ESP分区）  六、准备安装磁盘  使用DiskGenus划分出要安装macOS的磁盘  七、关闭安全启动   开机狂按F10进入BIOS设置-选择系统设置-选择启动选项-修改安全启动模式为禁用\n  八、开始安装  开机选择U盘启动，狂按F9键进入，选择制作的启动盘里的启动选项，选择第一个，第二个为PE的启动项    进入OC引导界面，选择安装install macos\n  进入到启动界面\n  选择简体中文\n  首先选择磁盘工具将之前划分出来的分区进行格式化\n  找到划分的分区，根据大小和位置判断\n  点击上方的抹除，名称随意，固态硬盘格式选择APFS（机械硬盘选择MacOS日志），如果EFI分区过小会出现抹除失败\n  接下来就可以进行系统安装了\n  一路下一步，协议全部同意\n  安装过程会自动重启，此时第二次进到OC引导界面，选择新增的macOS install选项\n  进入开机界面，稍后会再次重启\n 这里会重启多次，每次重启依然选择macOS install选项，直到出现这个选项消失，此时出现macOS系统盘选项，这时已安装完成，可以开机进入系统了\n   开机进入，一路下一步，不要登录账号，不要开启定位\n  安装完成，进入桌面\n  九、将EFI文件放入ESP分区中   将U盘中能顺利安装并启动macOS的EFI放到硬盘的ESP分区里，这里采用黑果小兵提供的挂载方法，方便以后替换EFI文件（也可直接使用DiskGenus将文件EFI文件放入\n  在Windows操作系统下面,以系统管理员身份打开cmd窗口,输入命令:\nc:\\diskpart list disk # 磁盘列表 select disk n # 选择EFI分区所在的磁盘，n为磁盘号 list partition # 磁盘分区列表 select partition n # 选择EFI分区，n为EFI分区号 set id=\"ebd0a0a2-b9e5-4433-87c0-68b6b72699c7\"\t# 设置为基本数据分区 assign letter=X # x为EFI分区盘符 exit\t# 退出diskpart notepad\t  执行完重启一次，之后就可以直接替换文件了\n  十、修改启动选项  使用DiskGenus修改启动项顺序，将opencore引导放在首位  ","wordCount":"71","inLanguage":"en","datePublished":"2021-11-05T22:59:29+08:00","dateModified":"2021-11-05T22:59:29+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.addxe.com/posts/99c03bb5/"},"publisher":{"@type":"Organization","name":"Earlのblog","logo":{"@type":"ImageObject","url":"https://blog.addxe.com/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://www.wilds.top/ accesskey=h title="Earlのblog (Alt + H)">Earlのblog</a>
+<a href=https://blog.addxe.com/ accesskey=h title="Earlのblog (Alt + H)">Earlのblog</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
@@ -55,27 +55,27 @@
 </div>
 <ul id=menu>
 <li>
-<a href=https://www.wilds.top/search title>
+<a href=https://blog.addxe.com/search title>
 <span><i class="fa fa-search"></i></span>
 </a>
 </li>
 <li>
-<a href=https://www.wilds.top/archives/ title=Archive>
+<a href=https://blog.addxe.com/archives/ title=Archive>
 <span>Archive</span>
 </a>
 </li>
 <li>
-<a href=https://www.wilds.top/categories title=Categories>
+<a href=https://blog.addxe.com/categories title=Categories>
 <span>Categories</span>
 </a>
 </li>
 <li>
-<a href=https://www.wilds.top/tags title=Tags>
+<a href=https://blog.addxe.com/tags title=Tags>
 <span>Tags</span>
 </a>
 </li>
 <li>
-<a href=https://www.wilds.top/friends/ title=Friends>
+<a href=https://blog.addxe.com/friends/ title=Friends>
 <span>Friends</span>
 </a>
 </li>
@@ -85,7 +85,7 @@
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://www.wilds.top/>Home</a>&nbsp;»&nbsp;<a href=https://www.wilds.top/posts/>Posts</a></div>
+<div class=breadcrumbs><a href=https://blog.addxe.com/>Home</a>&nbsp;»&nbsp;<a href=https://blog.addxe.com/posts/>Posts</a></div>
 <h1 class=post-title>
 Hackintosh安装
 </h1>
@@ -316,15 +316,15 @@ notepad
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://www.wilds.top/tags/%E6%95%99%E7%A8%8B/>教程</a></li>
+<li><a href=https://blog.addxe.com/tags/%E6%95%99%E7%A8%8B/>教程</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://www.wilds.top/posts/ff79dbf8/>
+<a class=prev href=https://blog.addxe.com/posts/ff79dbf8/>
 <span class=title>« Prev Page</span>
 <br>
 <span>Lambda表达式</span>
 </a>
-<a class=next href=https://www.wilds.top/posts/9f22989d/>
+<a class=next href=https://blog.addxe.com/posts/9f22989d/>
 <span class=title>Next Page »</span>
 <br>
 <span>宝塔破解面板破解</span>
@@ -334,7 +334,7 @@ notepad
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://www.wilds.top/>Earlのblog</a></span>
+<span>&copy; 2022 <a href=https://blog.addxe.com/>Earlのblog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

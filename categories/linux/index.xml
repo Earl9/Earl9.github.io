@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on Earlのblog</title>
-    <link>https://www.wilds.top/categories/linux/</link>
+    <link>https://blog.addxe.com/categories/linux/</link>
     <description>Recent content in Linux on Earlのblog</description>
     <image>
-      <url>https://www.wilds.top/papermod-cover.png</url>
-      <link>https://www.wilds.top/papermod-cover.png</link>
+      <url>https://blog.addxe.com/papermod-cover.png</url>
+      <link>https://blog.addxe.com/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 25 Oct 2021 22:37:02 +0800</lastBuildDate><atom:link href="https://www.wilds.top/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Oct 2021 22:37:02 +0800</lastBuildDate><atom:link href="https://blog.addxe.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>宝塔破解面板破解</title>
-      <link>https://www.wilds.top/posts/9f22989d/</link>
+      <link>https://blog.addxe.com/posts/9f22989d/</link>
       <pubDate>Mon, 25 Oct 2021 22:37:02 +0800</pubDate>
       
-      <guid>https://www.wilds.top/posts/9f22989d/</guid>
+      <guid>https://blog.addxe.com/posts/9f22989d/</guid>
       <description>宝塔高级功能解锁</description>
     </item>
     
     <item>
       <title>OneManager搭建教程</title>
-      <link>https://www.wilds.top/posts/0adbf5e5/</link>
+      <link>https://blog.addxe.com/posts/0adbf5e5/</link>
       <pubDate>Tue, 19 Oct 2021 22:44:25 +0800</pubDate>
       
-      <guid>https://www.wilds.top/posts/0adbf5e5/</guid>
+      <guid>https://blog.addxe.com/posts/0adbf5e5/</guid>
       <description>利用OneManager搭建网盘</description>
     </item>
     
     <item>
       <title>ArchLinux&#43;Windows10双系统安装笔记</title>
-      <link>https://www.wilds.top/posts/307d4fd8/</link>
+      <link>https://blog.addxe.com/posts/307d4fd8/</link>
       <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wilds.top/posts/307d4fd8/</guid>
+      <guid>https://blog.addxe.com/posts/307d4fd8/</guid>
       <description>archLinux探索</description>
     </item>
     
